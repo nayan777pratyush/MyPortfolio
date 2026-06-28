@@ -5,7 +5,7 @@ export type RobotState = "flyIn" | "idle" | "wave" | "flyOut";
 export class RobotAnimator {
   private state: RobotState = "flyIn";
 
-  private stateStart = 0;
+  stateStart = 0;
 
   start(state: RobotState, time: number) {
     this.state = state;
