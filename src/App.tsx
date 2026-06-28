@@ -10,33 +10,58 @@ const CURTAIN_RIGHT = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/
 const WORLD_BG      = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706392/image_2_gkcdlx.png";
 const BOTTOM_CLOUDS = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706555/bottom_clouds_xskut6.png";
 
+import quick1 from "./assets/Quickai1.png";
+import quick2 from "./assets/Quickai2.png";
+import quick3 from "./assets/Quickai3.png";
+import quick4 from "./assets/Quickai4.png";
+
+import auth1 from "./assets/MERN-Auth.png";
+import auth2 from "./assets/MERN-Auth-2.png";
+import auth3 from "./assets/MERN-Auth-3.png";
+
+import uber1 from "./assets/Uber-Clone-1.png";
+import uber2 from "./assets/Uber-Clone-2.png";
+import uber3 from "./assets/Uber-Clone-3.png";
+import uber4 from "./assets/Uber-Clone-4.png";
+import uber5 from "./assets/Uber-Clone-5.png";
+import uber6 from "./assets/Uber-Clone-6.png";
+import uber7 from "./assets/Uber-Clone-7.png";
+
+import lms1 from "./assets/LMS-1.png";
+import lms2 from "./assets/LMS-2.png";
+import lms3 from "./assets/LMS-3.png";
+
+import meet1 from "./assets/MeetflowAI-1.png";
+import meet2 from "./assets/MeetflowAI-2.png";
+import meet3 from "./assets/MeetflowAI-3.png";
+import meet4 from "./assets/MeetflowAI-4.png";
+
 const CARD_IMAGES = [
-  "src/assets/Quickai1.png", 
-  "src/assets/Quickai2.png", 
-  "src/assets/Quickai3.png", 
-  "src/assets/Quickai4.png",
+  quick1,
+  quick2,
+  quick3,
+  quick4,
 
-  "src/assets/MERN-Auth.png",
-  "src/assets/MERN-Auth-2.png",
-  "src/assets/MERN-Auth-3.png",
+  auth1,
+  auth2,
+  auth3,
 
-  "src/assets/Uber-Clone-1.png",
-  "src/assets/Uber-Clone-2.png",
-  "src/assets/Uber-Clone-3.png",
-  "src/assets/Uber-Clone-4.png",
-  "src/assets/Uber-Clone-5.png",
-  "src/assets/Uber-Clone-6.png",
-  "src/assets/Uber-Clone-7.png",
+  uber1,
+  uber2,
+  uber3,
+  uber4,
+  uber5,
+  uber6,
+  uber7,
 
-  "src/assets/LMS-1.png",
-  "src/assets/LMS-2.png",
-  "src/assets/LMS-3.png",
+  lms1,
+  lms2,
+  lms3,
 
-  "src/assets/MeetflowAI-1.png",
-  "src/assets/MeetflowAI-2.png",
-  "src/assets/MeetflowAI-3.png",
-  "src/assets/MeetflowAI-4.png",
-
+  meet1,
+  meet2,
+  meet3,
+  meet4,
 ];
 
 interface CardData {
