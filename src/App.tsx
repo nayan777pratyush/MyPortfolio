@@ -1804,25 +1804,32 @@ const handleCardClick = (p: ProjectData) => {
       const my = smoothMouseY.current;
 
       if (worldRef.current) {
-        const s = lerp(1, 1.18, ep);
-        worldRef.current.style.transform = `scale(${s}) translate(${-mx * 6}px, ${-my * 6}px)`;
+const s = lerp(1, 1.08, ep);
+
+worldRef.current.style.transform =
+`translate(${-mx * 6}px, ${-my * 6}px)
+ scale(${s})
+ rotate(0.35deg)`;
       }
+      worldRef.current.style.filter =
+`blur(${lerp(0,6,ep)}px)`;
+      
       if (cloudsRef.current) {
-        const s = lerp(1, 1.4, ep);
+        const s = lerp(1, 1.15, ep);
         cloudsRef.current.style.transform = `scale(${s}) translate(${-mx * 9}px, ${-my * 9 * 0.4}px)`;
       }
       if (portalRef.current) {
-        const s = lerp(1, 7.5, ep);
+        const s = lerp(1, 5.8, ep);
         portalRef.current.style.transform = `scale(${s}) translate(${-mx * 7}px, ${-my * 7}px)`;
       }
       if (entranceDoneRef.current) {
         const st = -lerp(0, 150, ep);
         if (curtainLRef.current) {
-          const s = lerp(1, 1.3, ep);
+          const s = lerp(1, 1.15, ep);
           curtainLRef.current.style.transform = `translateX(calc(-62% + ${st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
         }
         if (curtainRRef.current) {
-          const s = lerp(1, 1.3, ep);
+          const s = lerp(1, 1.15, ep);
           curtainRRef.current.style.transform = `translateX(calc(62% + ${-st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
         }
       }
@@ -1834,10 +1841,10 @@ const handleCardClick = (p: ProjectData) => {
 
   // Derived values
   const scene1Opacity = clamp(1 - scrollProgress / 0.22, 0, 1);
-  const scene2Opacity = clamp((scrollProgress - 0.68) / 0.16, 0, 1);
-  const portalOpacity = clamp(1 - (scrollProgress - 0.65) / 0.20, 0, 1);
+  const scene2Opacity = clamp((scrollProgress - 0.60) / 0.24, 0, 1);
+  const portalOpacity = clamp(1 - (scrollProgress - 0.55) / 0.28, 0, 1);
   const cloudsOpacity = lerp(0.7, 1.0, clamp(scrollProgress / 0.05, 0, 1));
-  const rotationOffset = lerp(0, 80, clamp((scrollProgress - 0.70) / 0.30, 0, 1));
+  const rotationOffset = lerp(0, 45, clamp((scrollProgress - 0.70) / 0.30, 0, 1));
 
   const uiFade = (delay: string): React.CSSProperties => ({
     opacity: uiVisible ? 1 : 0,
