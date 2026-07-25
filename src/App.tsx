@@ -3,7 +3,7 @@ import RobotOverlay from "./components/Robot/RobotOverlay";
 import portalBg from "./assets/raw_world_f4.jpg";
 import curtainLeft from "./assets/raw_world_f3.jpg";
 import curtainRight from "./assets/raw_world_f2.jpg";
-import worldBg from "./assets/raw_world_f1.jpg";
+import worldBg from "./assets/raw_city_f0.jpg"; // f1
 import bottomClouds from "./assets/raw_world_f0.jpg";
 
 // ==========================================
