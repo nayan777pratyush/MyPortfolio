@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import RobotOverlay from "./components/Robot/RobotOverlay";
-import portalBg     from "./assets/portal_bg.png";
-import curtainLeft  from "./assets/curtain_left.png";
+import portalBg from "./assets/portal_bg.png";
+import curtainLeft from "./assets/curtain_left.png";
 import curtainRight from "./assets/curtain_right.png";
-import worldBg      from "./assets/world_of_mountain.mp4";
+import worldBg from "./assets/world_of_mountain.mp4";
 import bottomClouds from "./assets/bottom_clouds.png";
 
 // ==========================================
@@ -17,10 +17,10 @@ const CURTAIN_RIGHT = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/
 const WORLD_BG = worldBg;
 const BOTTOM_CLOUDS = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706555/bottom_clouds_xskut6.png";
 */
-const PORTAL_BG     = portalBg;
-const CURTAIN_LEFT  = curtainLeft;
+const PORTAL_BG = portalBg;
+const CURTAIN_LEFT = curtainLeft;
 const CURTAIN_RIGHT = curtainRight;
-const WORLD_BG      = worldBg;      
+const WORLD_BG = worldBg;      
 const BOTTOM_CLOUDS = bottomClouds;
 
 import quick1 from "./assets/Quickai1.png";
