@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import RobotOverlay from "./components/Robot/RobotOverlay";
+import worldBg from "./assets/animation_portfolio.webp";
 
 // ==========================================
 // CONSTANTS & ASSETS
@@ -7,7 +8,8 @@ import RobotOverlay from "./components/Robot/RobotOverlay";
 const PORTAL_BG     = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779707217/image_1_vdzwae.png";
 const CURTAIN_LEFT  = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706559/curtain_left_znkmva.png";
 const CURTAIN_RIGHT = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706564/curtain_right_paeyym.png";
-const WORLD_BG      = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706392/image_2_gkcdlx.png";
+//const WORLD_BG      = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706392/image_2_gkcdlx.png";
+const WORLD_BG = worldBg;
 const BOTTOM_CLOUDS = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706555/bottom_clouds_xskut6.png";
 
 import quick1 from "./assets/Quickai1.png";
