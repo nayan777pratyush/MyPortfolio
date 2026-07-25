@@ -1810,9 +1810,9 @@ worldRef.current.style.transform =
 `translate(${-mx * 6}px, ${-my * 6}px)
  scale(${s})
  rotate(0.35deg)`;
-      }
       worldRef.current.style.filter =
 `blur(${lerp(0,6,ep)}px)`;
+      }
       
       if (cloudsRef.current) {
         const s = lerp(1, 1.15, ep);
