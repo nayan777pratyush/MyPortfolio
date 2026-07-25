@@ -1889,24 +1889,10 @@ const handleProjectClose = () => {
           overflow: 'hidden', background: '#08050c',
         }}>
           {/* World BG */}
-<video
-  ref={worldRef as React.RefObject<HTMLVideoElement>}
-  src={WORLD_BG}
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
-  style={{
-    position: 'absolute',
-    inset: 0,
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    transformOrigin: '50% 50%',
-    zIndex: 0,
-  }}
-/>
+          <img ref={worldRef} src={WORLD_BG} alt="" style={{
+            position: 'absolute', inset: 0, width: '100%', height: '100%',
+            objectFit: 'cover', transformOrigin: '50% 50%', zIndex: 0,
+          }} />
 
           {/* Bottom clouds */}
           <img ref={cloudsRef} src={BOTTOM_CLOUDS} alt="" style={{
