@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import RobotOverlay from "./components/Robot/RobotOverlay";
-import portalBg from "./assets/raw_city_f0.jpg";
-import curtainLeft from "./assets/curtain_left.png";
-import curtainRight from "./assets/curtain_right.png";
-import worldBg from "./assets/raw_world_f0.jpg";
-import bottomClouds from "./assets/bottom_clouds.png";
+import portalBg from "./assets/raw_world_f4.jpg";
+import curtainLeft from "./assets/raw_world_f3.png";
+import curtainRight from "./assets/raw_world_f2.png";
+import worldBg from "./assets/raw_world_f1.jpg";
+import bottomClouds from "./assets/raw_world_f0.png";
 
 // ==========================================
 // CONSTANTS & ASSETS
