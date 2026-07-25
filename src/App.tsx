@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import RobotOverlay from "./components/Robot/RobotOverlay";
-import portalBg from "./assets/portal_bg.png";
+import portalBg from "./assets/raw_city_f0.jpg";
 import curtainLeft from "./assets/curtain_left.png";
 import curtainRight from "./assets/curtain_right.png";
-import worldBg from "./assets/world_bg.png";
+import worldBg from "./assets/raw_world_f0.jpg";
 import bottomClouds from "./assets/bottom_clouds.png";
 
 // ==========================================
