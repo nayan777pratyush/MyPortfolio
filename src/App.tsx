@@ -2003,13 +2003,7 @@ const handleProjectClose = () => {
                   transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', gap: '12px',
                   zIndex: 10, ...uiFade('0.55s'),
                 }}>
-                  <div className="m-glass-stat-card">
-                    <div className="m-glass-stat-icon purple">&#9654;</div>
-                    <div>
-                      <div className="m-glass-stat-num" style={{ fontFamily: "'Viaoda Libre', serif", fontSize: '20px' }}>View Reel</div>
-                      <div className="m-glass-stat-label">See magic in motion</div>
-                    </div>
-                  </div>
+          
                   <div className="m-glass-stat-card">
                     <div className="m-glass-stat-icon gold" style={{ fontSize: '20px' }}>&#9733;</div>
                     <div>
@@ -2017,13 +2011,7 @@ const handleProjectClose = () => {
                       <div className="m-glass-stat-label">Projects Shipped</div>
                     </div>
                   </div>
-                  <div className="m-glass-stat-card">
-                    <div className="m-glass-stat-icon purple">&#9654;</div>
-                    <div>
-                      <div className="m-glass-stat-num" style={{ fontFamily: "'Viaoda Libre', serif", fontSize: '20px' }}>View Reel</div>
-                      <div className="m-glass-stat-label">Experience the vibe</div>
-                    </div>
-                  </div>
+                  
                 </div>
 
                 {/* Scroll cue */}
