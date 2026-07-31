@@ -4,7 +4,7 @@ import portalBg from "./assets/raw_city_f0.jpg"; // f4
 import curtainLeft from "./assets/raw_world_f3.jpg";
 import curtainRight from "./assets/raw_world_f2.jpg";
 import worldBg from "./assets/raw_world_f4.jpg"; 
-import bottomClouds from "./assets/raw_world_f3.jpg";
+import bottomClouds from "./assets/raw_world_f4.jpg";
 
 // ==========================================
 // CONSTANTS & ASSETS
@@ -1890,9 +1890,9 @@ const handleProjectClose = () => {
       />
 
       {/* ── PARALLAX STICKY ZONE ── */}
-      <div style={{ height: '480vh', position: 'relative' }}>
+      <div style={{ height: 'clamp(320vh, 480dvh, 480dvh)', position: 'relative' }}>
         <div style={{
-          position: 'sticky', top: 0, height: '100vh', width: '100%',
+          position: 'sticky', top: 0, height: '100dvh', width: '100%',
           overflow: 'hidden', background: '#08050c',
         }}>
           {/* World BG */}
