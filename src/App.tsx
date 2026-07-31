@@ -1794,50 +1794,50 @@ const handleCardClick = (p: ProjectData) => {
   }, []);
 
   // High-perf animation loop
-  useEffect(() => {
-    let raf: number;
-    const animate = () => {
-      smoothMouseX.current += (targetMouseX.current - smoothMouseX.current) * 0.07;
-      smoothMouseY.current += (targetMouseY.current - smoothMouseY.current) * 0.07;
-      const ep = easeInOut(scrollProgressRef.current);
-      const mx = smoothMouseX.current;
-      const my = smoothMouseY.current;
+useEffect(() => {
+  let raf: number;
+  const parallaxK = isMobile ? 0.35 : 1;      // dampens mouse-parallax offset
+  const portalMax  = isMobile ? 2.4 : 5.8;    // was flat 5.8 — way too much on portrait
+  const worldMax   = isMobile ? 1.03 : 1.08;
+  const cloudsMax  = isMobile ? 1.05 : 1.15;
+  const curtainMax = isMobile ? 1.05 : 1.15;
 
-      if (worldRef.current) {
-const s = lerp(1, 1.08, ep);
+  const animate = () => {
+    smoothMouseX.current += (targetMouseX.current - smoothMouseX.current) * 0.07;
+    smoothMouseY.current += (targetMouseY.current - smoothMouseY.current) * 0.07;
+    const ep = easeInOut(scrollProgressRef.current);
+    const mx = smoothMouseX.current * parallaxK;
+    const my = smoothMouseY.current * parallaxK;
 
-worldRef.current.style.transform =
-`translate(${-mx * 6}px, ${-my * 6}px)
- scale(${s})
- rotate(0.35deg)`;
-      worldRef.current.style.filter =
-`blur(${lerp(0,6,ep)}px)`;
+    if (worldRef.current) {
+      const s = lerp(1, worldMax, ep);
+      worldRef.current.style.transform = `translate(${-mx * 6}px, ${-my * 6}px) scale(${s}) rotate(0.35deg)`;
+      worldRef.current.style.filter = `blur(${lerp(0, isMobile ? 3 : 6, ep)}px)`;
+    }
+    if (cloudsRef.current) {
+      const s = lerp(1, cloudsMax, ep);
+      cloudsRef.current.style.transform = `scale(${s}) translate(${-mx * 9}px, ${-my * 9 * 0.4}px)`;
+    }
+    if (portalRef.current) {
+      const s = lerp(1, portalMax, ep);
+      portalRef.current.style.transform = `scale(${s}) translate(${-mx * 7}px, ${-my * 7}px)`;
+    }
+    if (entranceDoneRef.current) {
+      const st = -lerp(0, isMobile ? 90 : 150, ep); // smaller curtain travel on mobile
+      if (curtainLRef.current) {
+        const s = lerp(1, curtainMax, ep);
+        curtainLRef.current.style.transform = `translateX(calc(-62% + ${st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
       }
-      
-      if (cloudsRef.current) {
-        const s = lerp(1, 1.15, ep);
-        cloudsRef.current.style.transform = `scale(${s}) translate(${-mx * 9}px, ${-my * 9 * 0.4}px)`;
+      if (curtainRRef.current) {
+        const s = lerp(1, curtainMax, ep);
+        curtainRRef.current.style.transform = `translateX(calc(62% + ${-st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
       }
-      if (portalRef.current) {
-        const s = lerp(1, 5.8, ep);
-        portalRef.current.style.transform = `scale(${s}) translate(${-mx * 7}px, ${-my * 7}px)`;
-      }
-      if (entranceDoneRef.current) {
-        const st = -lerp(0, 150, ep);
-        if (curtainLRef.current) {
-          const s = lerp(1, 1.15, ep);
-          curtainLRef.current.style.transform = `translateX(calc(-62% + ${st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
-        }
-        if (curtainRRef.current) {
-          const s = lerp(1, 1.15, ep);
-          curtainRRef.current.style.transform = `translateX(calc(62% + ${-st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
-        }
-      }
-      raf = requestAnimationFrame(animate);
-    };
-    animate();
-    return () => cancelAnimationFrame(raf);
-  }, []);
+    }
+    raf = requestAnimationFrame(animate);
+  };
+  animate();
+  return () => cancelAnimationFrame(raf);
+}, [isMobile]);
 
   // Derived values
   const scene1Opacity = clamp(1 - scrollProgress / 0.22, 0, 1);
