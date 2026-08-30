@@ -1,28 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import RobotOverlay from "./components/Robot/RobotOverlay";
-import portalBg from "./assets/raw_city_f0.jpg"; // f4
-import curtainLeft from "./assets/raw_world_f3.jpg";
-import curtainRight from "./assets/raw_world_f2.jpg";
-import worldBg from "./assets/raw_world_f4.jpg"; 
-import bottomClouds from "./assets/raw_world_f4.jpg";
-
-// ==========================================
-// CONSTANTS & ASSETS
-// ==========================================
-/*
-const PORTAL_BG     = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779707217/image_1_vdzwae.png";
-const CURTAIN_LEFT  = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706559/curtain_left_znkmva.png";
-const CURTAIN_RIGHT = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706564/curtain_right_paeyym.png";
-//const WORLD_BG      = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706392/image_2_gkcdlx.png";
-const WORLD_BG = worldBg;
-const BOTTOM_CLOUDS = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1779706555/bottom_clouds_xskut6.png";
-*/
-const PORTAL_BG = portalBg;
-const CURTAIN_LEFT = curtainLeft;
-const CURTAIN_RIGHT = curtainRight;
-const WORLD_BG = worldBg;      
-const BOTTOM_CLOUDS = bottomClouds;
-
 import quick1 from "./assets/Quickai1.png";
 import quick2 from "./assets/Quickai2.png";
 import quick3 from "./assets/Quickai3.png";
@@ -77,26 +54,6 @@ const CARD_IMAGES = [
   meet4,
 ];
 
-interface CardData {
-  title: string;
-  desc: string;
-  color: string;
-  tag: string;
-  link: string;
-}
-
-const SCENE2_CARDS: CardData[] = [
-  { title: 'QuickAI',       desc: 'AI-powered content generation & study assistant platform',   color: '#e8dff5', tag: 'AI SaaS',        link: 'https://quick-ai-two-swart.vercel.app/' },
-  { title: 'PratyushLMS',   desc: 'Full-featured learning management system with analytics',    color: '#dcedc2', tag: 'LMS',            link: 'https://github.com/nayan777pratyush/PratyushLMS.' },
-  { title: 'MERN-Auth',     desc: 'JWT-based auth with OTP verification & role-based access',   color: '#f3cdd6', tag: 'Auth System',    link: 'https://github.com/nayan777pratyush/MERN-Auth' },
-  { title: 'Uber Clone',    desc: 'Real-time ride-hailing with Google Maps & live tracking',    color: '#c3e3f4', tag: 'Full Stack',     link: 'https://github.com/nayan777pratyush/Uber-Clone' },
-  { title: 'MeetFlow AI',   desc: 'AI video conferencing with summaries & action extraction',   color: '#f0e4c0', tag: 'AI Platform',   link: 'https://github.com/nayan777pratyush/MeetFlow-AI' },
-  { title: 'QuickAI',       desc: 'Scalable backend handling 500+ AI requests per day',         color: '#e8dff5', tag: 'Backend',       link: 'https://quick-ai-two-swart.vercel.app/' },
-  { title: 'MERN-Auth',     desc: 'Reduced unauthorized access by ~90% via layered security',  color: '#f3cdd6', tag: 'Security',      link: 'https://github.com/nayan777pratyush/MERN-Auth' },
-  { title: 'Uber Clone',    desc: 'Role-based flows for riders and drivers with live updates',  color: '#c3e3f4', tag: 'Real-time',     link: 'https://github.com/nayan777pratyush/Uber-Clone' },
-  { title: 'MeetFlow AI',   desc: 'WebRTC conferencing with AI-driven post-meeting analytics', color: '#dcedc2', tag: 'WebRTC',        link: 'https://github.com/nayan777pratyush/MeetFlow-AI' },
-];
-
 interface ProjectData {
   tag: string;
   name: string;
@@ -125,7 +82,7 @@ const PROJECTS: ProjectData[] = [
     ],
     features: ['AI content generation (blogs, articles, summaries)', 'Multi-source document & web ingestion', 'Real-time AI chatbot for study help', 'Scalable backend handling 500+ requests/day', 'User authentication & usage analytics'],
     tags: ['React.js','Node.js','PostgreSQL','AI APIs'],
-    github: 'https://github.com/nayan777pratyush',
+    github: 'https://github.com/nayan777pratyush/QuickAI',
     live: 'https://quick-ai-two-swart.vercel.app/',
     previewImg: CARD_IMAGES[0],
     previewImages: [CARD_IMAGES[0], CARD_IMAGES[1], CARD_IMAGES[2], CARD_IMAGES[3]],
@@ -988,111 +945,231 @@ const GLOBAL_CSS = `
     letter-spacing: 0.08em;
   }
 
-  /* ── HERO SECTION (portfolio) ── */
+  /* ── PORTFOLIO HERO / TWO-PANEL INTRO ── */
   #m-hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 40px 80px;
+    min-height: 100svh;
+    height: 100svh;
     position: relative;
     overflow: hidden;
+    background:
+      radial-gradient(ellipse 60% 65% at 10% 50%, rgba(100,55,180,0.15), transparent 72%),
+      radial-gradient(ellipse 55% 65% at 90% 50%, rgba(80,35,150,0.13), transparent 72%),
+      linear-gradient(180deg, #090610 0%, #08050c 100%);
   }
-  .m-hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--mystic-accent-dim);
-    margin-bottom: 24px;
+
+  #m-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(180,140,232,0.025) 50%, transparent);
+  }
+
+  .m-hero-stage {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    overflow: hidden;
+  }
+
+  .m-hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), opacity 0.55s ease, visibility 0s linear 0.8s;
+  }
+
+  .m-hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+    transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), opacity 0.55s ease;
+  }
+
+  .m-hero-slide.exit-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  /* PANEL 01 — 3D GIF + editorial quotes */
+  .m-hero-gif-quote-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
+    align-items: center;
+    gap: clamp(38px, 6vw, 96px);
+    width: min(1180px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    padding: 96px 60px 74px;
+  }
+
+  .m-hero-gif-half {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
   }
-  .m-hero-eyebrow::before, .m-hero-eyebrow::after {
-    content: '';
-    width: 40px; height: 1px;
-    background: var(--mystic-accent-dim);
+
+  .m-hero-gif-full {
+    display: block;
+    width: min(48vw, 640px);
+    height: min(72vh, 620px);
+    object-fit: contain;
+    border-radius: 22px;
+    filter: drop-shadow(0 28px 70px rgba(90,40,150,0.34));
   }
+
+  .m-hero-terminal-full {
+    display: block;
+    width: min(47vw, 650px);
+    height: min(70vh, 560px);
+    object-fit: contain;
+    border-radius: 20px;
+    border: 1px solid rgba(180,140,232,0.22);
+    box-shadow: 0 28px 75px rgba(50,20,100,0.40), 0 0 45px rgba(130,80,220,0.10);
+  }
+
+  .m-hero-panel-label {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-body);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--mystic-text-faint);
+  }
+
+  /* PANEL 02 — identity + terminal composition */
+  .m-hero-identity-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.85fr);
+    align-items: center;
+    gap: clamp(38px, 6vw, 96px);
+    width: min(1180px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    padding: 96px 60px 74px;
+  }
+
+  .m-hero-identity {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+  }
+
+  .m-hero-identity-kicker {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(180,140,232,0.72);
+    margin-bottom: 24px;
+  }
+
   .m-hero-name {
     font-family: var(--font-display);
-    font-size: clamp(60px, 9vw, 110px);
+    font-size: clamp(62px, 8vw, 112px);
     font-weight: normal;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
+    line-height: 0.88;
+    letter-spacing: -0.025em;
     color: var(--mystic-text);
-    margin-bottom: 8px;
+    margin-bottom: 22px;
   }
+
   .m-hero-name span {
     display: block;
     color: var(--mystic-accent);
     font-style: italic;
   }
+
   .m-hero-title {
     font-family: var(--font-refined);
-    font-size: clamp(16px, 2.2vw, 22px);
+    font-size: clamp(19px, 2vw, 25px);
     color: var(--mystic-text-muted);
-    letter-spacing: 0.06em;
-    margin-bottom: 20px;
-    margin-top: 16px;
+    letter-spacing: 0.055em;
+    margin-bottom: 16px;
   }
+
   .m-hero-desc {
     font-family: var(--font-refined);
-    font-size: 16px;
+    font-size: 18px;
     color: rgba(205,192,235,0.72);
-    max-width: 540px;
-    line-height: 1.75;
-    margin-bottom: 48px;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 30px;
   }
+
   .m-hero-cta {
     display: flex;
     gap: 14px;
-    margin-bottom: 48px;
+    margin-bottom: 26px;
     flex-wrap: wrap;
-    justify-content: center;
   }
-  .m-btn-primary {
+
+  .m-btn-primary,
+  .m-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 22px;
+    border-radius: 100px;
+    text-decoration: none;
     font-family: var(--font-body);
-    font-size: 12px;
-    letter-spacing: 0.14em;
+    font-size: 11px;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
+    transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  }
+
+  .m-btn-primary {
     color: var(--mystic-void);
     background: var(--mystic-accent);
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 100px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-    box-shadow: 0 4px 20px rgba(140,80,220,0.35);
+    border: 1px solid var(--mystic-accent);
   }
-  .m-btn-primary:hover { background: #c9a8f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(160,100,240,0.45); }
+
   .m-btn-secondary {
-    font-family: var(--font-body);
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
     color: var(--mystic-text-muted);
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 100px;
-    border: 1px solid var(--mystic-border);
-    cursor: pointer;
-    transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
+    background: rgba(30,20,50,0.32);
+    border: 1px solid rgba(180,140,220,0.28);
   }
+
+  .m-btn-primary:hover,
   .m-btn-secondary:hover {
-    border-color: var(--mystic-accent-dim);
-    color: var(--mystic-accent);
-    background: rgba(50,30,90,0.5);
     transform: translateY(-2px);
   }
+
+  .m-btn-primary:hover {
+    color: var(--mystic-void);
+    background: #c9a8f0;
+    border-color: #c9a8f0;
+    box-shadow: 0 10px 28px rgba(140,80,220,0.24);
+  }
+
+  .m-btn-secondary:hover {
+    color: var(--mystic-accent);
+    border-color: var(--mystic-accent-dim);
+    background: rgba(50,30,90,0.55);
+    box-shadow: 0 10px 28px rgba(100,40,200,0.16);
+  }
+
   .m-hero-socials {
     display: flex;
     gap: 20px;
   }
+
   .m-hero-social-link {
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -1103,53 +1180,313 @@ const GLOBAL_CSS = `
     border-bottom: 1px solid transparent;
     padding-bottom: 2px;
   }
+
   .m-hero-social-link:hover { color: var(--mystic-accent); border-bottom-color: var(--mystic-accent-dim); }
 
-  /* Glassmorphism stats panel */
-  .m-hero-glass-stats {
-    position: absolute; right: 48px; top: 50%; transform: translateY(-50%);
-    display: flex; flex-direction: column; gap: 12px;
-    z-index: 10;
+  .m-hero-quotes {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
-  .m-glass-stat-card {
-    background: rgba(22, 14, 40, 0.65);
-    backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid rgba(180,140,220,0.24);
-    border-radius: 16px; padding: 16px 20px;
-    display: flex; align-items: center; gap: 14px;
-    min-width: 210px;
-    box-shadow: 0 8px 32px rgba(60,20,120,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
-    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  }
-  .m-glass-stat-card:hover { border-color: rgba(180,140,220,0.42); box-shadow: 0 12px 40px rgba(100,40,200,0.30); transform: translateX(-4px); }
-  .m-glass-stat-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-  .m-glass-stat-icon.purple { background: rgba(140,80,220,0.22); border: 1px solid rgba(140,80,220,0.32); }
-  .m-glass-stat-icon.gold { background: rgba(200,160,60,0.20); border: 1px solid rgba(200,160,60,0.30); }
-  .m-glass-stat-num { font-family: var(--font-display); font-size: 26px; color: var(--mystic-text); line-height: 1; }
-  .m-glass-stat-label { font-size: 11px; color: var(--mystic-text-muted); letter-spacing: 0.04em; }
 
-  /* Animated scroll cue */
-  .m-scroll-cue {
+  .m-hero-quote-card {
+    position: relative;
+    padding: 21px 24px 20px;
+    border: 1px solid rgba(180,140,220,0.17);
+    border-radius: 18px;
+    background: rgba(30,20,50,0.48);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 14px 45px rgba(50,20,100,0.14);
+  }
+
+  .m-hero-quote-card::before {
+    content: '“';
     position: absolute;
-    bottom: 40px;
+    top: 7px;
+    left: 13px;
+    font-family: var(--font-display);
+    font-size: 34px;
+    line-height: 1;
+    color: rgba(180,140,232,0.42);
+  }
+
+  .m-hero-quote-card p {
+    font-family: var(--font-refined);
+    font-size: clamp(16px, 1.45vw, 20px);
+    line-height: 1.45;
+    font-style: italic;
+    color: rgba(230,220,248,0.82);
+    padding-left: 20px;
+  }
+
+  .m-hero-quote-card.featured {
+    border-color: rgba(180,140,232,0.30);
+    background: rgba(40,25,68,0.58);
+  }
+
+  .m-hero-reverie {
+    margin-top: 28px;
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2vw, 27px);
+    letter-spacing: 0.14em;
+    color: rgba(245,238,255,0.82);
+  }
+
+  .m-hero-reverie em { color: var(--mystic-accent); font-style: italic; }
+
+  .m-hero-divider {
+    width: 90px;
+    height: 1px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, var(--mystic-accent-dim), transparent);
+  }
+
+  /* PANEL 03 — engineering focus */
+  .m-hero-focus-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: center;
+    gap: clamp(38px, 6vw, 92px);
+    width: min(1180px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    padding: 96px 60px 74px;
+  }
+
+  .m-hero-focus-intro {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+  }
+
+  .m-hero-focus-title {
+    font-family: var(--font-display);
+    font-size: clamp(54px, 6.4vw, 88px);
+    font-weight: normal;
+    line-height: 0.94;
+    letter-spacing: -0.025em;
+    color: var(--mystic-text);
+    margin-bottom: 24px;
+  }
+
+  .m-hero-focus-title em {
+    color: var(--mystic-accent);
+    font-style: italic;
+  }
+
+  .m-hero-focus-desc {
+    font-family: var(--font-refined);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(205,192,235,0.72);
+    max-width: 500px;
+  }
+
+  .m-hero-focus-line {
+    width: 90px;
+    height: 1px;
+    margin-top: 28px;
+    background: linear-gradient(90deg, var(--mystic-accent-dim), transparent);
+  }
+
+  .m-hero-focus-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .m-hero-focus-card {
+    min-height: 170px;
+    padding: 24px;
+    border: 1px solid rgba(180,140,220,0.18);
+    border-radius: 18px;
+    background: rgba(30,20,50,0.48);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 14px 45px rgba(50,20,100,0.14);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  }
+
+  .m-hero-focus-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .m-hero-focus-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(180,140,232,0.38);
+    background: rgba(40,25,68,0.58);
+  }
+
+  .m-hero-focus-card span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--mystic-accent-dim);
+    margin-bottom: 14px;
+  }
+
+  .m-hero-focus-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--mystic-text);
+    margin-bottom: 8px;
+  }
+
+  .m-hero-focus-card p {
+    font-family: var(--font-refined);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--mystic-text-muted);
+  }
+
+  .m-hero-arrows {
+    position: absolute;
+    right: 34px;
+    bottom: 30px;
+    z-index: 20;
+    display: flex;
+    gap: 8px;
+  }
+
+  .m-hero-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(180,140,232,0.28);
+    background: rgba(25,15,42,0.68);
+    backdrop-filter: blur(12px);
+    color: rgba(245,238,255,0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
+  }
+
+  .m-hero-arrow:hover {
+    border-color: var(--mystic-accent);
+    color: var(--mystic-accent);
+    background: rgba(50,30,90,0.72);
+    transform: translateY(-2px);
+  }
+
+  .m-hero-progress {
+    position: absolute;
     left: 50%;
+    bottom: 42px;
     transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .m-hero-progress-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid rgba(180,140,232,0.45);
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .m-hero-progress-dot.active {
+    width: 26px;
+    border-radius: 100px;
+    background: var(--mystic-accent);
+    border-color: var(--mystic-accent);
+  }
+
+  .m-hero-timer {
+    position: absolute;
+    left: 34px;
+    bottom: 34px;
+    z-index: 20;
+    width: 92px;
+    height: 1px;
+    overflow: hidden;
+    background: rgba(180,140,232,0.13);
+  }
+
+  .m-hero-timer::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background: rgba(180,140,232,0.65);
+    animation: heroTimer 10s linear infinite;
+  }
+
+  @keyframes heroTimer { from { width: 0; } to { width: 100%; } }
+
+  .m-hero-scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    opacity: 0.5;
-    animation: bounce-down 2s ease-in-out infinite;
+    gap: 6px;
+    opacity: 0.48;
+    pointer-events: none;
   }
-  @keyframes bounce-down {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(6px); }
-  }
-  .m-scroll-cue span {
+
+  .m-hero-scroll-cue span {
     font-size: 9px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--mystic-text-faint);
+  }
+
+  @media (max-width: 900px) {
+    #m-hero { height: 100svh; min-height: 680px; }
+    .m-hero-gif-quote-panel { padding: 84px 28px 80px; gap: 28px; }
+    .m-hero-gif-half { padding: 8px; }
+    .m-hero-gif-full { width: 48vw; height: 55vh; }
+    .m-hero-terminal-full { width: 46vw; height: 52vh; }
+    .m-hero-identity-panel { grid-template-columns: 1fr; gap: 28px; padding: 92px 34px 90px; overflow-y: auto; }
+    .m-hero-identity { text-align: center; }
+    .m-hero-name { font-size: clamp(52px, 12vw, 78px); }
+    .m-hero-desc { margin-left: auto; margin-right: auto; }
+    .m-hero-cta, .m-hero-socials { justify-content: center; }
+    .m-hero-quotes { max-width: 620px; width: 100%; margin: 0 auto; }
+    .m-hero-reverie { text-align: center; }
+    .m-hero-divider { margin-left: auto; margin-right: auto; }
+    .m-hero-focus-panel { grid-template-columns: 1fr; gap: 28px; padding: 92px 34px 90px; overflow-y: auto; }
+    .m-hero-focus-intro { text-align: center; }
+    .m-hero-focus-desc { margin-left: auto; margin-right: auto; }
+    .m-hero-focus-line { margin-left: auto; margin-right: auto; }
+    .m-hero-focus-grid { max-width: 620px; width: 100%; margin: 0 auto; }
+
+    .m-hero-arrows { right: 20px; bottom: 20px; }
+    .m-hero-timer { left: 20px; bottom: 24px; }
+  }
+
+  @media (max-width: 560px) {
+    .m-hero-gif-quote-panel { grid-template-columns: 1fr; grid-template-rows: auto 1fr; padding: 78px 16px 70px; gap: 18px; }
+    .m-hero-gif-half { padding: 5px; }
+    .m-hero-gif-full { width: 82vw; height: 44vh; }
+    .m-hero-terminal-full { width: 82vw; height: 38vh; }
+    .m-hero-identity-panel { padding: 88px 22px 92px; }
+    .m-hero-focus-panel { padding: 88px 22px 92px; }
+    .m-hero-focus-grid { grid-template-columns: 1fr; }
+    .m-hero-focus-card:last-child { grid-column: auto; }
+    .m-hero-focus-card { min-height: 0; }
+    .m-hero-title { font-size: 18px; }
+    .m-hero-desc { font-size: 15px; }
+    .m-hero-quote-card { padding: 17px 18px; }
+    .m-hero-quote-card p { font-size: 15px; }
+    .m-hero-arrow { width: 38px; height: 38px; }
+    .m-hero-timer { display: none; }
+    .m-hero-progress { bottom: 27px; }
   }
 
   /* arc card link */
@@ -1200,27 +1537,134 @@ const GLOBAL_CSS = `
     .m-modal-hero { height: 180px; }
     .m-modal-title { font-size: 30px; }
   }
+
+  /* ── FINAL MOBILE POLISH ── */
+  #m-hero, .m-hero-stage, .m-hero-slide { min-width: 0; max-width: 100%; }
+  .m-hero-slide { overflow: hidden; }
+  .m-hero-gif-quote-panel, .m-hero-identity-panel, .m-hero-focus-panel { min-width: 0; }
+  .m-hero-focus-card, .m-hero-quote-card, .m-project-card, .m-info-panel, .m-certs { min-width: 0; }
+  .m-hero-focus-card p, .m-hero-quote-card p, .m-project-bullets li, .m-about-body p, .m-info-value, .m-contact-sub { overflow-wrap: anywhere; }
+
+  @media (max-width: 767px) {
+    html, body { overflow-x: hidden; }
+    .m-cursor, .m-cursor-ring { display: none; }
+    .m-nav { height: 60px; padding: 0 18px; }
+    .m-nav-logo { font-size: 20px; }
+    .m-nav-links.open { top: 60px; padding: 20px 22px 24px; gap: 17px; }
+    .m-nav-links a { font-size: 10px; }
+
+    .m-section { width: 100%; padding: 72px 20px; }
+    .m-heading { font-size: clamp(36px, 11vw, 52px); }
+    .m-rule { margin-bottom: 38px; }
+    .m-about-grid { gap: 28px; }
+    .m-about-body p { font-size: 17px; line-height: 1.72; }
+    .m-stat-row { gap: 10px; margin-top: 34px; }
+    .m-stat { padding: 16px 10px; border-radius: 14px; }
+    .m-stat-num { font-size: 27px; }
+    .m-stat-label { font-size: 9px; letter-spacing: 0.06em; }
+    .m-info-panel { padding: 22px; border-radius: 16px; }
+
+    .m-timeline { padding-left: 30px; }
+    .m-tl-dot { left: -27px; }
+    .m-tl-degree { font-size: 20px; }
+    .m-tl-school { font-size: 14px; line-height: 1.45; }
+
+    .m-projects-grid { gap: 16px; }
+    .m-project-card { padding: 22px 20px 24px; border-radius: 17px; }
+    .m-project-name { font-size: 25px; }
+    .m-project-bullets li { font-size: 14px; }
+    .m-project-links { flex-wrap: wrap; }
+    .m-project-link { padding: 7px 13px; font-size: 10px; }
+
+    .m-skills-outer { gap: 32px; }
+    .m-skill-group-title { font-size: 10px; letter-spacing: 0.16em; }
+    .m-pills { gap: 7px; }
+    .m-pill { font-size: 13px; padding: 7px 13px; }
+
+    .m-achieve-grid { gap: 14px; }
+    .m-achieve-card { padding: 22px 20px; border-radius: 17px; }
+    .m-cert-grid { gap: 4px; }
+    .m-certs { padding: 22px; border-radius: 17px; }
+    .m-cert-item { font-size: 13px; }
+
+    .m-contact-sub { font-size: 16px; margin-bottom: 34px; }
+    .m-contact-link { max-width: none; font-size: 15px; padding: 12px 16px; }
+    .m-footer { padding: 28px 20px; }
+
+    /* Hero: every panel stays inside the phone viewport and can scroll internally if needed. */
+    #m-hero { height: 100svh; min-height: 620px; }
+    .m-hero-stage { inset: 0; }
+    .m-hero-slide { overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
+    .m-hero-gif-quote-panel, .m-hero-identity-panel, .m-hero-focus-panel {
+      width: 100%; min-height: 100%; height: auto; padding-left: 20px; padding-right: 20px;
+    }
+    .m-hero-gif-quote-panel {
+      grid-template-columns: 1fr; grid-template-rows: auto auto; align-content: center;
+      padding-top: 78px; padding-bottom: 90px; gap: 18px;
+    }
+    .m-hero-gif-full { width: min(78vw, 310px); height: min(36vh, 260px); }
+    .m-hero-quotes { width: 100%; gap: 10px; }
+    .m-hero-quote-card { padding: 14px 15px; border-radius: 15px; }
+    .m-hero-quote-card p { font-size: 14px; line-height: 1.4; padding-left: 17px; }
+
+    .m-hero-identity-panel {
+      grid-template-columns: 1fr; align-content: center; gap: 20px;
+      padding-top: 82px; padding-bottom: 88px; overflow-y: auto;
+    }
+    .m-hero-identity { text-align: center; }
+    .m-hero-identity-kicker { font-size: 9px; margin-bottom: 17px; letter-spacing: 0.22em; }
+    .m-hero-name { font-size: clamp(44px, 14vw, 64px); line-height: 0.9; margin-bottom: 17px; }
+    .m-hero-title { font-size: 16px; line-height: 1.35; margin-bottom: 12px; }
+    .m-hero-desc { font-size: 14px; line-height: 1.55; margin-bottom: 20px; }
+    .m-hero-cta { gap: 9px; margin-bottom: 18px; justify-content: center; }
+    .m-btn-primary, .m-btn-secondary { min-height: 40px; padding: 9px 16px; font-size: 9px; }
+    .m-hero-socials { gap: 16px; justify-content: center; }
+    .m-hero-social-link { font-size: 9px; }
+    .m-hero-reverie { margin-top: 20px; font-size: 16px; }
+
+    .m-hero-focus-panel {
+      grid-template-columns: 1fr; align-content: center; gap: 20px;
+      padding-top: 82px; padding-bottom: 88px;
+    }
+    .m-hero-focus-intro { text-align: center; }
+    .m-hero-focus-title { font-size: clamp(42px, 12vw, 60px); line-height: 0.94; margin-bottom: 16px; }
+    .m-hero-focus-desc { font-size: 14px; line-height: 1.55; }
+    .m-hero-focus-line { margin: 20px auto 0; }
+    .m-hero-focus-grid { grid-template-columns: 1fr; gap: 10px; width: 100%; }
+    .m-hero-focus-card, .m-hero-focus-card:last-child { grid-column: auto; min-height: 0; padding: 16px 17px; border-radius: 15px; }
+    .m-hero-focus-card span { margin-bottom: 8px; }
+    .m-hero-focus-card h3 { font-size: 19px; margin-bottom: 5px; }
+    .m-hero-focus-card p { font-size: 13px; line-height: 1.45; }
+
+    .m-hero-panel-label { bottom: 15px; font-size: 7px; letter-spacing: 0.2em; }
+    .m-hero-arrows { right: 14px; bottom: 14px; }
+    .m-hero-arrow { width: 36px; height: 36px; font-size: 18px; }
+    .m-hero-progress { bottom: 22px; }
+    .m-hero-scroll-cue { display: none; }
+  }
+
+  @media (max-width: 380px) {
+    #m-hero { min-height: 600px; }
+    .m-section { padding-left: 16px; padding-right: 16px; }
+    .m-hero-gif-quote-panel, .m-hero-identity-panel, .m-hero-focus-panel { padding-left: 16px; padding-right: 16px; }
+    .m-hero-gif-full { width: 72vw; height: 30vh; }
+    .m-hero-quote-card p { font-size: 13px; }
+    .m-hero-name { font-size: 42px; }
+    .m-hero-title { font-size: 15px; }
+    .m-hero-desc { font-size: 13px; }
+    .m-hero-focus-title { font-size: 40px; }
+    .m-hero-focus-card h3 { font-size: 18px; }
+    .m-hero-focus-card p { font-size: 12.5px; }
+    .m-hero-arrows { right: 10px; bottom: 10px; }
+    .m-hero-progress { bottom: 18px; }
+  }
+
 `;
 
 // ==========================================
 // UTILITIES
 // ==========================================
-const easeInOut = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(max, val));
 
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(() =>
-    window.matchMedia('(max-width:767px)').matches
-  );
-  useEffect(() => {
-    const media = window.matchMedia('(max-width:767px)');
-    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-    }, []);
-  return isMobile;
-}
 
 // ==========================================
 // FLOATING BUBBLES
@@ -1255,108 +1699,6 @@ const FloatingBubbles: React.FC = () => (
     ))}
   </>
 );
-
-// ==========================================
-// ARC CARD SLIDER
-// ==========================================
-interface ArcCardSliderProps {
-  cards: CardData[];
-  rotationOffset: number;
-  isMobile: boolean;
-}
-
-const ArcCardSlider: React.FC<ArcCardSliderProps> = ({ cards, rotationOffset, isMobile }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const cardSpacingDeg = isMobile ? 12 : 9;
-  const centerIndex = Math.floor(cards.length / 2);
-  const arcRadius = isMobile ? 700 : 1100;
-  const cardW = isMobile ? 160 : 220;
-  const cardH = isMobile ? 175 : 230;
-  const halfW = cardW / 2;
-
-  return (
-    <div style={{
-      position: 'relative',
-      width: '100vw',
-      height: isMobile ? '260px' : '360px',
-      overflow: 'visible',
-      display: 'flex',
-      justifyContent: 'center',
-    }}>
-      {cards.map((card, i) => {
-        const baseDeg = (i - centerIndex) * cardSpacingDeg;
-        const deg = baseDeg - rotationOffset + (centerIndex * cardSpacingDeg);
-        const rad = (deg * Math.PI) / 180;
-        const x = Math.sin(rad) * arcRadius;
-        const y = arcRadius - Math.cos(rad) * arcRadius;
-        const isHovered = hoveredIndex === i;
-
-        return (
-          <a
-            key={i}
-            href={card.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="arc-card-link"
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            style={{
-              position: 'absolute',
-              bottom: `${-y + (isMobile ? 140 : 200)}px`,
-              left: `calc(50% + ${x}px - ${halfW}px)`,
-              width: `${cardW}px`,
-              height: `${cardH}px`,
-              borderRadius: isMobile ? '18px' : '24px',
-              backgroundColor: card.color,
-              boxShadow: isHovered
-                ? '0 20px 60px rgba(40,20,60,0.4), 0 0 0 1px rgba(180,140,220,0.3)'
-                : '0 8px 40px rgba(40,20,60,0.25)',
-              transform: `rotate(${deg}deg) ${isHovered ? 'translateY(-18px) scale(1.04)' : ''}`,
-              transformOrigin: `${halfW}px ${arcRadius}px`,
-              padding: isMobile ? '14px' : '22px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              transition: 'transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s',
-              boxSizing: 'border-box',
-              zIndex: isHovered ? 20 : 10,
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <span style={{
-                fontSize: '9px',
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: 'rgba(60,30,80,0.55)',
-                background: 'rgba(60,30,80,0.1)',
-                padding: '3px 8px',
-                borderRadius: '100px',
-                border: '1px solid rgba(60,30,80,0.15)',
-              }}>{card.tag}</span>
-            </div>
-            <div>
-              <h4 style={{
-                fontFamily: "'Viaoda Libre', serif",
-                fontSize: isMobile ? '19px' : '24px',
-                color: '#2a1540',
-                margin: '0 0 4px',
-                lineHeight: 1.1,
-                fontWeight: 'normal',
-              }}>{card.title}</h4>
-              <p style={{
-                fontFamily: "'Imprima', sans-serif",
-                fontSize: isMobile ? '11px' : '12.5px',
-                color: 'rgba(42,21,64,0.6)',
-                margin: 0,
-                lineHeight: 1.4,
-              }}>{card.desc}</p>
-            </div>
-          </a>
-        );
-      })}
-    </div>
-  );
-};
 
 // ==========================================
 // IMAGE LIGHTBOX
@@ -1506,6 +1848,19 @@ const ExternalIcon = () => (
   </svg>
 );
 
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+    <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.68H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.3zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V8.99H3.54v11.46z"/>
+  </svg>
+);
+
+const ResumeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="14" height="14" aria-hidden="true">
+    <path d="M6 3.5h9l3 3V20.5H6z"/>
+    <path d="M15 3.5v4h3M9 11h6M9 14h6M9 17h4"/>
+  </svg>
+);
+
 // ==========================================
 // PROJECT MODAL
 // ==========================================
@@ -1616,65 +1971,38 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 // MAIN APP
 // ==========================================
 export default function App() {
-  const isMobile = useIsMobile();
-
-  // Parallax states
-  const [curtainsOpen, setCurtainsOpen] = useState(false);
-  const [uiVisible, setUiVisible] = useState(false);
-  const [entranceDone, setEntranceDone] = useState(false);
-  const curtainsOpenRef = useRef(false);
-  const entranceDoneRef = useRef(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const scrollProgressRef = useRef(0);
-
-  // Parallax refs
-  const worldRef    = useRef<HTMLImageElement>(null);
-  const cloudsRef   = useRef<HTMLImageElement>(null);
-  const portalRef   = useRef<HTMLImageElement>(null);
-  const curtainLRef = useRef<HTMLImageElement>(null);
-  const curtainRRef = useRef<HTMLImageElement>(null);
-  const targetMouseX = useRef(0);
-  const targetMouseY = useRef(0);
-  const smoothMouseX = useRef(0);
-  const smoothMouseY = useRef(0);
-
-  // Portfolio states
-  const [navHidden, setNavHidden] = useState(true);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const [selectedProject, setSelectedProject] =
-  useState<ProjectData | null>(null);
-const [showRobot, setShowRobot] =
-  useState(false);
-const [robotLeaving, setRobotLeaving] =
-  useState(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+  const [showRobot, setShowRobot] = useState(false);
+  const [robotLeaving, setRobotLeaving] = useState(false);
   const [clickedCard, setClickedCard] = useState<string | null>(null);
-  
+  const [heroSlide, setHeroSlide] = useState<0 | 1 | 2>(0);
+  const heroTouchStartX = useRef<number | null>(null);
+  const heroTouchStartY = useRef<number | null>(null);
 
-const handleCardClick = (p: ProjectData) => {
+  const NAV_SECTIONS = ['about','education','projects','skills','achievements','contact'];
 
-  setClickedCard(p.tag);
-
-  setTimeout(() => {
-
-    setClickedCard(null);
-
-    setSelectedProject(p);
-
-    // Robot starts hidden
-    setShowRobot(false);
-    setRobotLeaving(false);
-
-    // Wait a little after modal opens
+  const handleCardClick = (p: ProjectData) => {
+    setClickedCard(p.tag);
     setTimeout(() => {
-      setShowRobot(true);
-    }, 500);
+      setClickedCard(null);
+      setSelectedProject(p);
+      setShowRobot(false);
+      setRobotLeaving(false);
+      setTimeout(() => setShowRobot(true), 500);
+    }, 380);
+  };
 
-  }, 380);
+  const handleProjectClose = () => {
+    setRobotLeaving(true);
+    setTimeout(() => {
+      setShowRobot(false);
+      setSelectedProject(null);
+      setRobotLeaving(false);
+    }, 2500);
+  };
 
-};
-
-  // Inject global styles
   useEffect(() => {
     const el = document.createElement('style');
     el.textContent = GLOBAL_CSS;
@@ -1682,29 +2010,44 @@ const handleCardClick = (p: ProjectData) => {
     return () => { document.head.removeChild(el); };
   }, []);
 
-  // Entrance sequence
+  // Hero intro: three panels, rotating every 10 seconds.
   useEffect(() => {
-    const t1 = setTimeout(() => { setCurtainsOpen(true); curtainsOpenRef.current = true; }, 100);
-    const t2 = setTimeout(() => setUiVisible(true), 600);
-    const t3 = setTimeout(() => { setEntranceDone(true); entranceDoneRef.current = true; }, 2200);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, []);
+    const timer = window.setInterval(() => {
+      setHeroSlide(current => current === 2 ? 0 : (current + 1) as 0 | 1 | 2);
+    }, 10000);
+    return () => window.clearInterval(timer);
+  }, [heroSlide]);
 
-  // Scroll listener + active section tracker
+  const heroSlideClass = (index: 0 | 1 | 2) =>
+    `m-hero-slide ${heroSlide === index ? 'active' : heroSlide > index ? 'exit-left' : ''}`;
+
+  const goHeroPrev = () => setHeroSlide(current => current === 0 ? 2 : (current - 1) as 0 | 1 | 2);
+  const goHeroNext = () => setHeroSlide(current => current === 2 ? 0 : (current + 1) as 0 | 1 | 2);
+
+  const handleHeroTouchStart = (e: React.TouchEvent<HTMLElement>) => {
+    heroTouchStartX.current = e.touches[0]?.clientX ?? null;
+    heroTouchStartY.current = e.touches[0]?.clientY ?? null;
+  };
+
+  const handleHeroTouchEnd = (e: React.TouchEvent<HTMLElement>) => {
+    if (heroTouchStartX.current === null || heroTouchStartY.current === null) return;
+    const endX = e.changedTouches[0]?.clientX ?? heroTouchStartX.current;
+    const endY = e.changedTouches[0]?.clientY ?? heroTouchStartY.current;
+    const dx = endX - heroTouchStartX.current;
+    const dy = endY - heroTouchStartY.current;
+    heroTouchStartX.current = null;
+    heroTouchStartY.current = null;
+    if (Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)) return;
+    if (dx < 0) goHeroNext();
+    else goHeroPrev();
+  };
+
   useEffect(() => {
-    const sections = ['m-about','m-education','m-projects','m-skills','m-achievements','m-contact'];
     const handleScroll = () => {
-      const parallaxScrollRange = window.innerHeight * 3.8;
-      const p = clamp(window.scrollY / parallaxScrollRange, 0, 1);
-      setScrollProgress(p);
-      scrollProgressRef.current = p;
-      setNavHidden(p < 0.95);
-
-      // Active section
       let current = '';
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 100) current = id.replace('m-', '');
+      for (const id of NAV_SECTIONS) {
+        const el = document.getElementById(`m-${id}`);
+        if (el && window.scrollY >= el.offsetTop - 180) current = id;
       }
       setActiveSection(current);
     };
@@ -1713,64 +2056,49 @@ const handleCardClick = (p: ProjectData) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Mouse parallax
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      targetMouseX.current = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
-      targetMouseY.current = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
-    };
-    if (!window.matchMedia('(max-width: 1023px)').matches) {
-      window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    }
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  // Custom cursor
   useEffect(() => {
     const cursor = document.getElementById('m-cursor-dot');
-    const ring   = document.getElementById('m-cursor-ring');
+    const ring = document.getElementById('m-cursor-ring');
     let mx = 0, my = 0, fx = 0, fy = 0;
-    let raf: number;
+    let raf = 0;
 
     const onMove = (e: MouseEvent) => {
       mx = e.clientX; my = e.clientY;
-      if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
+      if (cursor) { cursor.style.left = `${mx}px`; cursor.style.top = `${my}px`; }
     };
     const animate = () => {
       fx += (mx - fx) * 0.12;
       fy += (my - fy) * 0.12;
-      if (ring) { ring.style.left = fx + 'px'; ring.style.top = fy + 'px'; }
+      if (ring) { ring.style.left = `${fx}px`; ring.style.top = `${fy}px`; }
       raf = requestAnimationFrame(animate);
     };
-    document.addEventListener('mousemove', onMove);
-    animate();
-
     const onOver = (e: MouseEvent) => {
       const t = e.target as HTMLElement;
-      if (t.closest('a, button, .m-pill, .m-project-card, .m-achieve-card, .m-btn-primary, .m-btn-secondary')) {
+      if (t.closest('a, button, .m-pill, .m-project-card, .m-achieve-card')) {
         if (cursor) cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
         if (ring) { ring.style.width = '56px'; ring.style.height = '56px'; ring.style.borderColor = 'rgba(180,140,232,0.8)'; }
       }
     };
     const onOut = (e: MouseEvent) => {
       const t = e.target as HTMLElement;
-      if (t.closest('a, button, .m-pill, .m-project-card, .m-achieve-card, .m-btn-primary, .m-btn-secondary')) {
+      if (t.closest('a, button, .m-pill, .m-project-card, .m-achieve-card')) {
         if (cursor) cursor.style.transform = 'translate(-50%,-50%) scale(1)';
         if (ring) { ring.style.width = '34px'; ring.style.height = '34px'; ring.style.borderColor = 'rgba(180,140,232,0.5)'; }
       }
     };
+
+    document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseover', onOver);
     document.addEventListener('mouseout', onOut);
-
+    animate();
     return () => {
       document.removeEventListener('mousemove', onMove);
-      cancelAnimationFrame(raf);
       document.removeEventListener('mouseover', onOver);
       document.removeEventListener('mouseout', onOut);
+      cancelAnimationFrame(raf);
     };
   }, []);
 
-  // IntersectionObserver for portfolio animations
   useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1789,579 +2117,240 @@ const handleCardClick = (p: ProjectData) => {
         io.observe(el);
       });
     });
-
     return () => io.disconnect();
   }, []);
 
-  // High-perf animation loop
-useEffect(() => {
-  let raf: number;
-  const parallaxK = isMobile ? 0.35 : 1;      // dampens mouse-parallax offset
-  const portalMax  = isMobile ? 2.4 : 5.8;    // was flat 5.8 — way too much on portrait
-  const worldMax   = isMobile ? 1.03 : 1.08;
-  const cloudsMax  = isMobile ? 1.05 : 1.15;
-  const curtainMax = isMobile ? 1.05 : 1.15;
-
-  const animate = () => {
-    smoothMouseX.current += (targetMouseX.current - smoothMouseX.current) * 0.07;
-    smoothMouseY.current += (targetMouseY.current - smoothMouseY.current) * 0.07;
-    const ep = easeInOut(scrollProgressRef.current);
-    const mx = smoothMouseX.current * parallaxK;
-    const my = smoothMouseY.current * parallaxK;
-
-    if (worldRef.current) {
-      const s = lerp(1, worldMax, ep);
-      worldRef.current.style.transform = `translate(${-mx * 6}px, ${-my * 6}px) scale(${s}) rotate(0.35deg)`;
-      worldRef.current.style.filter = `blur(${lerp(0, isMobile ? 3 : 6, ep)}px)`;
-    }
-    if (cloudsRef.current) {
-      const s = lerp(1, cloudsMax, ep);
-      cloudsRef.current.style.transform = `scale(${s}) translate(${-mx * 9}px, ${-my * 9 * 0.4}px)`;
-    }
-    if (portalRef.current) {
-      const s = lerp(1, portalMax, ep);
-      portalRef.current.style.transform = `scale(${s}) translate(${-mx * 7}px, ${-my * 7}px)`;
-    }
-    if (entranceDoneRef.current) {
-      const st = -lerp(0, isMobile ? 90 : 150, ep); // smaller curtain travel on mobile
-      if (curtainLRef.current) {
-        const s = lerp(1, curtainMax, ep);
-        curtainLRef.current.style.transform = `translateX(calc(-62% + ${st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
-      }
-      if (curtainRRef.current) {
-        const s = lerp(1, curtainMax, ep);
-        curtainRRef.current.style.transform = `translateX(calc(62% + ${-st}%)) scale(${s}) translate(${-mx * 14}px, ${-my * 14 * 0.3}px)`;
-      }
-    }
-    raf = requestAnimationFrame(animate);
-  };
-  animate();
-  return () => cancelAnimationFrame(raf);
-}, [isMobile]);
-
-  // Derived values
-  const scene1Opacity = clamp(1 - scrollProgress / 0.22, 0, 1);
-  const scene2Opacity = clamp((scrollProgress - 0.60) / 0.24, 0, 1);
-  const portalOpacity = clamp(1 - (scrollProgress - 0.55) / 0.28, 0, 1);
-  const cloudsOpacity = lerp(0.7, 1.0, clamp(scrollProgress / 0.05, 0, 1));
-  const rotationOffset = lerp(0, 45, clamp((scrollProgress - 0.70) / 0.30, 0, 1));
-
-  const uiFade = (delay: string): React.CSSProperties => ({
-    opacity: uiVisible ? 1 : 0,
-    transform: uiVisible ? 'translateY(0)' : 'translateY(24px)',
-    transition: `opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}, transform 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}`,
-  });
-
-  const NAV_SECTIONS = ['about','education','projects','skills','achievements','contact'];
-
-const handleProjectClose = () => {
-  // Start fly-out animation
-  setRobotLeaving(true);
-
-  // Keep robot visible while flying away
-  setTimeout(() => {
-
-    setShowRobot(false);
-
-    setSelectedProject(null);
-
-    setRobotLeaving(false);
-
-  }, 2500);
-};
-
   return (
-    <div style={{ backgroundColor: '#08050c', minHeight: '100vh', width: '100vw', position: 'relative' }}>
-
-      {/* Custom cursors */}
+    <div style={{ backgroundColor: '#08050c', minHeight: '100vh', width: '100%', position: 'relative' }}>
       <div className="m-cursor" id="m-cursor-dot" />
       <div className="m-cursor-ring" id="m-cursor-ring" />
 
-      {/* Project Modal */}
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          onClose={handleProjectClose}
-        />
-      )}
-      <RobotOverlay
-        visible={showRobot}
-        leaving={robotLeaving}
-      />
+      {selectedProject && <ProjectModal project={selectedProject} onClose={handleProjectClose} />}
+      <RobotOverlay visible={showRobot} leaving={robotLeaving} />
 
-      {/* ── PARALLAX STICKY ZONE ── */}
-      <div style={{ height: 'clamp(320vh, 480dvh, 480dvh)', position: 'relative' }}>
-        <div style={{
-          position: 'sticky', top: 0, height: '100dvh', width: '100%',
-          overflow: 'hidden', background: '#08050c',
-        }}>
-          {/* World BG */}
-          <img ref={worldRef} src={WORLD_BG} alt="" style={{
-            position: 'absolute', inset: 0, width: '100%', height: '100%',
-            objectFit: 'cover', transformOrigin: '50% 50%', zIndex: 0,
-          }} />
-
-          {/* Bottom clouds */}
-          <img ref={cloudsRef} src={BOTTOM_CLOUDS} alt="" style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0, width: '100%',
-            height: 'auto', transformOrigin: '50% 100%', zIndex: 10, opacity: cloudsOpacity,
-          }} />
-
-          {/* Arc cards (project preview) */}
-          <div style={{
-            position: 'absolute', bottom: isMobile ? '60px' : '80px', left: 0, right: 0,
-            opacity: scene2Opacity,
-            pointerEvents: scene2Opacity > 0.15 ? 'auto' : 'none',
-            zIndex: 9, transition: 'opacity 0.4s ease',
-          }}>
-            <ArcCardSlider cards={SCENE2_CARDS} rotationOffset={rotationOffset} isMobile={isMobile} />
-          </div>
-
-          {/* Portal frame */}
-          <img ref={portalRef} src={PORTAL_BG} alt="" style={{
-            position: 'absolute', inset: 0, width: '100%', height: '100%',
-            objectFit: 'cover', transformOrigin: '52% 38%', zIndex: 15,
-            opacity: portalOpacity, pointerEvents: scrollProgress >= 0.85 ? 'none' : 'auto',
-          }} />
-
-          {/* Bottom fade */}
-          <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%',
-            background: 'linear-gradient(to top, rgba(8,5,12,0.6) 0%, transparent 100%)',
-            pointerEvents: 'none', zIndex: 16,
-          }} />
-
-          {/* Curtain Left */}
-          <img ref={curtainLRef} src={CURTAIN_LEFT} alt="" style={{
-            position: 'absolute', inset: 0, width: '100%', height: '100%',
-            objectFit: 'cover', objectPosition: 'right center',
-            transformOrigin: 'left center', zIndex: 16,
-            transition: entranceDone ? 'none' : 'transform 1.8s cubic-bezier(0.16,1,0.3,1)',
-            transform: curtainsOpen ? 'translateX(-62%)' : 'translateX(0%)',
-            pointerEvents: 'none',
-          }} />
-
-          {/* Curtain Right */}
-          <img ref={curtainRRef} src={CURTAIN_RIGHT} alt="" style={{
-            position: 'absolute', inset: 0, width: '100%', height: '100%',
-            objectFit: 'cover', objectPosition: 'left center',
-            transformOrigin: 'right center', zIndex: 16,
-            transition: entranceDone ? 'none' : 'transform 1.8s cubic-bezier(0.16,1,0.3,1)',
-            transform: curtainsOpen ? 'translateX(62%)' : 'translateX(0%)',
-            pointerEvents: 'none',
-          }} />
-
-          {/* Top fade */}
-          <div style={{
-            position: 'absolute', top: 0, left: 0, right: 0, height: '42vh',
-            background: 'linear-gradient(to bottom, rgba(8,5,12,0.5) 0%, transparent 100%)',
-            pointerEvents: 'none', zIndex: 45,
-          }} />
-
-          {/* SCENE 1 NAV — REMOVED as requested */}
-
-          {/* ── SCENE 1 HERO TEXT ── */}
-          <div style={{
-            position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
-            justifyContent: 'center', alignItems: 'center',
-            opacity: scene1Opacity, pointerEvents: scene1Opacity > 0.1 ? 'auto' : 'none',
-            zIndex: 20, transition: 'opacity 0.4s ease',
-          }}>
-            {isMobile ? (
-              <div style={{ padding: '80px 24px 100px', width: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-                <div style={uiFade('0.3s')}>
-                  <h1 style={{ fontFamily: "'Viaoda Libre', serif", color: '#fff', margin: '0 0 14px', textAlign: 'center', textShadow: '0 2px 24px rgba(0,0,0,0.7)' }}>
-                    <div style={{ fontSize: 'clamp(22px,6vw,34px)', letterSpacing: '0.22em' }}>FALL <span style={{ color: 'rgba(255,220,180,0.7)', margin: '0 4px' }}>&#8250;</span> <em>INTO</em></div>
-                    <div style={{ fontSize: 'clamp(52px,16vw,80px)', letterSpacing: '-0.02em', lineHeight: 0.9 }}>REVERIE</div>
-                  </h1>
-                  <p style={{ fontFamily: 'Imprima', fontSize: '14px', color: 'rgba(255,245,235,0.8)', maxWidth: '260px', margin: '0 auto', lineHeight: 1.65, textAlign: 'center' }}>
-                    Full Stack & AI Developer crafting digital worlds where vision and code dissolve into experience.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-                {/* Heading left */}
-                <div style={{
-                  position: 'absolute', top: '46%', left: '60px', maxWidth: '460px',
-                  transform: 'translateY(-50%)', textAlign: 'left', ...uiFade('0.3s'),
-                }}>
-                  <h1 style={{ fontFamily: "'Viaoda Libre', serif", color: '#fff', textShadow: '0 2px 24px rgba(0,0,0,0.7)', margin: '0 0 20px' }}>
-                    <div style={{ fontSize: 'clamp(28px,4vw,48px)', letterSpacing: '0.06em', lineHeight: 1.15 }}>
-                      FALL <span style={{ color: 'rgba(255,220,180,0.7)', margin: '0 8px' }}>&#8250;</span> <em>INTO</em>
-                    </div>
-                    <div style={{ fontSize: 'clamp(52px,7.5vw,90px)', letterSpacing: '-0.02em', lineHeight: 0.9 }}>REVERIE</div>
-                  </h1>
-                  <p style={{ fontFamily: 'Imprima', fontSize: '17px', color: 'rgba(255,245,235,0.82)', maxWidth: '320px', textShadow: '0 1px 12px rgba(0,0,0,0.8)', lineHeight: 1.7, margin: 0 }}>
-                    Full Stack & AI Developer crafting digital worlds where vision, code, and living myth dissolve into one.
-                  </p>
-                </div>
-
-                {/* Three small cards right — View Reel / Projects Shipped / View Reel */}
-                <div style={{
-                  position: 'absolute', right: '52px', top: '50%',
-                  transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', gap: '12px',
-                  zIndex: 10, ...uiFade('0.55s'),
-                }}>
-          
-                  <div className="m-glass-stat-card">
-                    <div className="m-glass-stat-icon gold" style={{ fontSize: '20px' }}>&#9733;</div>
-                    <div>
-                      <div className="m-glass-stat-num">5+</div>
-                      <div className="m-glass-stat-label">Projects Shipped</div>
-                    </div>
-                  </div>
-                  
-                </div>
-
-                {/* Scroll cue */}
-                <div style={{
-                  position: 'absolute', bottom: '36px', left: '50%', transform: 'translateX(-50%)',
-                  display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
-                  pointerEvents: 'none', ...uiFade('0.9s'),
-                }}>
-                  <span style={{ fontSize: '10px', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.45)', fontFamily: 'Imprima' }}>DESCEND</span>
-                  <div style={{
-                    width: '34px', height: '34px', borderRadius: '50%',
-                    border: '1.5px solid rgba(255,255,255,0.35)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    animation: 'bounce-down 2s ease-in-out infinite',
-                  }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2.5" strokeLinecap="round">
-                      <path d="M6 9l6 6 6-6"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* ── SCENE 2 UI ── */}
-          <div style={{
-            position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
-            alignItems: 'center', justifyContent: 'flex-start',
-            opacity: scene2Opacity, pointerEvents: scene2Opacity > 0.1 ? 'auto' : 'none',
-            zIndex: 46, boxSizing: 'border-box',
-            paddingTop: isMobile ? '12vh' : '10vh',
-            transition: 'opacity 0.4s ease',
-          }}>
-            <h2 style={{
-              fontFamily: "'Viaoda Libre', serif",
-              fontSize: isMobile ? 'clamp(28px,8vw,44px)' : 'clamp(38px,6.5vw,78px)',
-              color: '#fff', letterSpacing: '0.03em', lineHeight: 1.05, textAlign: 'center',
-              textShadow: '0 2px 20px rgba(0,0,0,0.4)', margin: 0,
-              maxWidth: isMobile ? '90%' : '80%', fontWeight: 'normal',
-            }}>
-              FORGE BEYOND THE REAL
-            </h2>
-            <p style={{
-              fontFamily: 'Imprima', fontSize: isMobile ? '13px' : '18px',
-              lineHeight: 1.6, textAlign: 'center', color: 'rgba(255,255,255,0.75)',
-              margin: `${isMobile ? '3vh' : '5vh'} auto 0`,
-              maxWidth: isMobile ? '260px' : '440px',
-            }}>
-              Projects that live at the edge of AI, full-stack engineering, and creative systems.
-            </p>
-          </div>
-
+      {/* ── STICKY NAV ── */}
+      <nav className="m-nav visible">
+        <a href="#m-hero" className="m-nav-logo">PB</a>
+        <ul className={`m-nav-links ${mobileNavOpen ? 'open' : ''}`}>
+          {NAV_SECTIONS.map(s => (
+            <li key={s}>
+              <a href={`#m-${s}`} className={activeSection === s ? 'active' : ''} onClick={() => setMobileNavOpen(false)}>
+                {s.charAt(0).toUpperCase() + s.slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="m-nav-toggle" onClick={() => setMobileNavOpen(v => !v)}>
+          <span /><span /><span />
         </div>
-      </div>
+      </nav>
 
-      {/* ── MIST TRANSITION ── */}
-      <div style={{
-        position: 'relative',
-        zIndex: 100,
-        marginTop: '-1px',
-        background: 'linear-gradient(180deg, transparent 0%, #08050c 18%)',
-        paddingTop: '1px',
-      }}>
+      {/* ── HERO: TWO-PANEL INTRO ── */}
+      <section id="m-hero" onTouchStart={handleHeroTouchStart} onTouchEnd={handleHeroTouchEnd}>
+        <div className="m-orb" style={{ width: '600px', height: '600px', background: '#7040c0', top: '-160px', left: '-250px' }} />
+        <div className="m-orb" style={{ width: '450px', height: '450px', background: '#4020a0', top: '220px', right: '-180px' }} />
+        <div className="m-orb" style={{ width: '300px', height: '300px', background: '#8050d0', bottom: '-80px', left: '44%' }} />
+        <FloatingBubbles />
 
-        {/* Ambient layer */}
-        <div aria-hidden style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          pointerEvents: 'none',
-          zIndex: 0,
-          background: 'radial-gradient(ellipse 70% 50% at 20% 30%, rgba(100,60,180,0.05) 0%, transparent 70%), radial-gradient(ellipse 50% 60% at 80% 70%, rgba(60,30,120,0.04) 0%, transparent 60%)',
-        }} />
+        <div className="m-hero-stage">
+          {/* PANEL 01 — 3D GIF + the editorial quotes */}
+          <div className={heroSlideClass(0)}>
+            <div className="m-hero-gif-quote-panel">
+              <div className="m-hero-gif-half">
+                <img src="/developer-3d.gif" alt="3D developer animation" className="m-hero-gif-full" />
+              </div>
 
-        {/* ── STICKY NAV (appears after parallax) ── */}
-        <nav className={`m-nav ${navHidden ? 'hidden' : 'visible'}`}>
-          <a href="#m-hero" className="m-nav-logo">PB</a>
-          <ul className={`m-nav-links ${mobileNavOpen ? 'open' : ''}`}>
-            {NAV_SECTIONS.map(s => (
-              <li key={s}><a href={`#m-${s}`} className={activeSection === s ? 'active' : ''} onClick={() => setMobileNavOpen(false)}>{s.charAt(0).toUpperCase() + s.slice(1)}</a></li>
-            ))}
-          </ul>
-          <div className="m-nav-toggle" onClick={() => setMobileNavOpen(v => !v)}>
-            <span/><span/><span/>
+              <div className="m-hero-quotes">
+                <div className="m-hero-quote-card featured"><p>Projects that live at the edge of AI, full-stack engineering, and creative systems.</p></div>
+                <div className="m-hero-quote-card"><p>Code with curiosity. Build with purpose. Learn without limits.</p></div>
+                <div className="m-hero-quote-card"><p>I believe consistency beats motivation.</p></div>
+                <div className="m-hero-quote-card"><p>Let&apos;s build something amazing together.</p></div>
+              </div>
+            </div>
+            <span className="m-hero-panel-label">01 / 03 · The Work</span>
           </div>
-        </nav>
 
-        {/* ── PORTFOLIO HERO ── */}
-        <section id="m-hero" style={{ position: 'relative', overflow: 'hidden' }}>
-          {/* Ambient orbs */}
-          <div className="m-orb" style={{ width: '600px', height: '600px', background: '#7040c0', top: '-100px', left: '-200px' }} />
-          <div className="m-orb" style={{ width: '400px', height: '400px', background: '#4020a0', top: '200px', right: '-100px' }} />
-          <div className="m-orb" style={{ width: '300px', height: '300px', background: '#8050d0', bottom: '50px', left: '40%' }} />
-
-          {/* Floating Bubbles */}
-          <FloatingBubbles />
-
-          <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', textAlign: 'center', padding: '120px 40px 80px' }}>
-            <p className="m-hero-eyebrow">Full Stack &amp; AI Developer</p>
-            <h1 className="m-hero-name">Pratyush<span>Bhattacharya</span></h1>
-            <p className="m-hero-title">Building scalable web systems &amp; AI-powered applications</p>
-            <p className="m-hero-desc">
-              Results-driven CSE undergraduate proficient in MERN, Next.js, PostgreSQL, and RESTful architecture &mdash; with real-world exposure to authentication systems, modular backend services, and AI integrations.
-            </p>
-            <div className="m-hero-cta">
-              <a href="#m-projects" className="m-btn-primary">View Projects</a>
-              <a href="#m-contact" className="m-btn-secondary">Get In Touch</a>
-            </div>
-            <div className="m-hero-socials">
-              <a href="https://github.com/nayan777pratyush" target="_blank" rel="noopener noreferrer" className="m-hero-social-link">GitHub</a>
-              <a href="https://www.linkedin.com/in/pratyush-bhattacharya/" target="_blank" rel="noopener noreferrer" className="m-hero-social-link">LinkedIn</a>
-            </div>
-            <div className="m-scroll-cue">
-              <svg width="1" height="48" viewBox="0 0 1 48"><line x1="0.5" y1="0" x2="0.5" y2="48" stroke="rgba(180,140,232,0.3)" strokeWidth="1"/></svg>
-              <span>Scroll</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ── ABOUT ── */}
-        <section id="m-about" style={{ position: 'relative', borderTop: '1px solid rgba(180,140,220,0.06)' }}>
-          <div className="m-orb" style={{ width: '500px', height: '500px', background: '#502090', top: '0px', right: '-150px' }} />
-          {/* Floating Bubbles */}
-          <FloatingBubbles />
-          <div className="m-section">
-            <div className="m-section-inner">
-              <p className="m-eyebrow">01</p>
-              <h2 className="m-heading">About <em>Me</em></h2>
-              <div className="m-rule" />
-              <div className="m-about-grid">
-                <div className="m-about-body">
-                  <p>I&apos;m a <strong>Computer Science Engineering undergraduate</strong> at Reva University, Bangalore, with a strong foundation in full-stack development and a genuine passion for building AI-powered applications that solve real problems.</p>
-                  <p>My work spans the full stack &mdash; from crafting <strong>responsive React interfaces</strong> to architecting robust Node.js backends with PostgreSQL and MongoDB. I&apos;ve shipped production-grade AI SaaS platforms, authentication systems, and real-time applications &mdash; always focused on <strong>clean architecture and scalable design</strong>.</p>
-                  <p>Outside code, I&apos;m a competitive chess player &mdash; having secured <strong>1st prize twice</strong> at inter-school championships &mdash; and an active hackathon participant who thrives in rapid prototyping environments.</p>
-                  <div className="m-stat-row">
-                    {[['8.42','Current CGPA'],['5+','Projects Shipped'],['10+','Technologies'],['4×','Hackathon Awards']].map(([n,l]) => (
-                      <div className="m-stat" key={l}><div className="m-stat-num">{n}</div><div className="m-stat-label">{l}</div></div>
-                    ))}
-                  </div>
+          {/* PANEL 02 — name + terminal GIF */}
+          <div className={heroSlideClass(1)}>
+            <div className="m-hero-identity-panel">
+              <div className="m-hero-identity">
+                <div className="m-hero-identity-kicker">Full Stack &amp; AI Developer</div>
+                <h1 className="m-hero-name">Pratyush<span>Bhattacharya</span></h1>
+                <p className="m-hero-title">Building scalable web systems &amp; AI-powered applications.</p>
+                <p className="m-hero-desc">Results-driven CSE undergraduate focused on full-stack engineering, AI integrations, clean architecture, and real-world software.</p>
+                <div className="m-hero-cta">
+                  <a href="#m-projects" className="m-btn-primary">View Projects</a>
+                  <a href="#m-contact" className="m-btn-secondary">Get In Touch</a>
                 </div>
-                <div className="m-info-panel">
-                  {[
-                    ['Location', 'Bangalore, India'],
-                    ['Email', <a href="mailto:pratyushbhattacharya7@gmail.com">pratyushbhattacharya7@gmail.com</a>],
-                    ['Phone', <a href="tel:+918123264791">+91 81232 64791</a>],
-                    ['GitHub', <a href="https://github.com/nayan777pratyush" target="_blank" rel="noopener noreferrer">nayan777pratyush</a>],
-                    ['LinkedIn', <a href="https://www.linkedin.com/in/pratyush-bhattacharya/" target="_blank" rel="noopener noreferrer">Pratyush-Bhattacharya</a>],
-                    ['Status', <span className="m-status-badge">Open to internships &amp; collaborations</span>],
-                  ].map(([label, value]) => (
-                    <div className="m-info-row" key={String(label)}>
-                      <span className="m-info-label">{label}</span>
-                      <span className="m-info-value">{value}</span>
-                    </div>
-                  ))}
+                <div className="m-hero-socials">
+                  <a href="https://github.com/nayan777pratyush" target="_blank" rel="noopener noreferrer" className="m-hero-social-link">GitHub</a>
+                  <a href="https://www.linkedin.com/in/pratyush-bhattacharya/" target="_blank" rel="noopener noreferrer" className="m-hero-social-link">LinkedIn</a>
+                </div>
+                <div className="m-hero-reverie">FALL <span>›</span> <em>INTO REVERIE</em></div>
+                <div className="m-hero-divider" />
+              </div>
+
+              <div className="m-hero-gif-half">
+                <img src="/developer-terminal.gif" alt="Developer terminal animation" className="m-hero-terminal-full" />
+              </div>
+            </div>
+          </div>
+
+          {/* PANEL 03 — engineering focus */}
+          <div className={heroSlideClass(2)}>
+            <div className="m-hero-focus-panel">
+              <div className="m-hero-focus-intro">
+                <div className="m-hero-identity-kicker">How I Build</div>
+                <h2 className="m-hero-focus-title">Build <em>systems</em><br />that matter.</h2>
+                <p className="m-hero-focus-desc">Full-stack engineering, AI integrations, and scalable backend architecture — designed to turn ideas into reliable software.</p>
+                <div className="m-hero-focus-line" />
+              </div>
+
+              <div className="m-hero-focus-grid">
+                <div className="m-hero-focus-card">
+                  <span>01</span>
+                  <h3>AI &amp; Intelligent Apps</h3>
+                  <p>Practical AI integrations, automation, document intelligence, and real-time assistants.</p>
+                </div>
+                <div className="m-hero-focus-card">
+                  <span>02</span>
+                  <h3>Full-Stack Systems</h3>
+                  <p>Modern React frontend with Node.js services, secure APIs, databases, and clean architecture.</p>
+                </div>
+                <div className="m-hero-focus-card">
+                  <span>03</span>
+                  <h3>Scale &amp; Reliability</h3>
+                  <p>Authentication, PostgreSQL, Docker, cloud-ready deployments, and production-minded engineering.</p>
                 </div>
               </div>
             </div>
+            <span className="m-hero-panel-label">03 / 03 · The Build</span>
           </div>
-        </section>
+        </div>
 
-        {/* ── EDUCATION ── */}
-        <section id="m-education" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
-          <div className="m-orb" style={{ width: '400px', height: '400px', background: '#301870', bottom: '0', left: '-100px' }} />
-          <FloatingBubbles />
-          <div className="m-section">
-            <div className="m-section-inner">
-              <p className="m-eyebrow">02</p>
-              <h2 className="m-heading"><em>Education</em></h2>
-              <div className="m-rule" />
-              <div className="m-timeline">
-                {[
-                  { date: 'Sep 2023 — Present', degree: 'BTech in Computer Science Engineering', school: 'Reva University, Bangalore', grade: 'CGPA 8.42 / 10' },
-                  { date: 'May 2021 — Apr 2023', degree: 'Pre-University Education', school: 'Cathedral Composite PU College, Bangalore', grade: '93.0%' },
-                  { date: 'June 2010 — March 2021', degree: 'Schooling (CBSE)', school: 'Kairalee Nilayam Central School, Bangalore', grade: '87.8%' },
-                ].map((item) => (
-                  <div className="m-tl-item" key={item.date}>
-                    <div className="m-tl-dot" />
-                    <div className="m-tl-date">{item.date}</div>
-                    <div className="m-tl-degree">{item.degree}</div>
-                    <div className="m-tl-school">{item.school}</div>
-                    <span className="m-tl-badge">{item.grade}</span>
-                  </div>
-                ))}
-              </div>
+        <div className="m-hero-arrows" aria-label="Hero panels">
+          <button type="button" className="m-hero-arrow" onClick={goHeroPrev} aria-label="Previous hero panel">‹</button>
+          <button type="button" className="m-hero-arrow" onClick={goHeroNext} aria-label="Next hero panel">›</button>
+        </div>
+
+        <div className="m-hero-progress" aria-hidden="true">
+          <button type="button" className={`m-hero-progress-dot ${heroSlide === 0 ? 'active' : ''}`} onClick={() => setHeroSlide(0)} aria-label="Hero panel 1" />
+          <button type="button" className={`m-hero-progress-dot ${heroSlide === 1 ? 'active' : ''}`} onClick={() => setHeroSlide(1)} aria-label="Hero panel 2" />
+          <button type="button" className={`m-hero-progress-dot ${heroSlide === 2 ? 'active' : ''}`} onClick={() => setHeroSlide(2)} aria-label="Hero panel 3" />
+        </div>
+
+        <div className="m-hero-timer" aria-hidden="true" key={heroSlide} />
+
+        <div className="m-hero-scroll-cue">
+          <span>Scroll</span>
+          <svg width="1" height="30" viewBox="0 0 1 30"><line x1="0.5" y1="0" x2="0.5" y2="30" stroke="rgba(180,140,232,0.35)" strokeWidth="1" /></svg>
+        </div>
+      </section>
+
+      {/* ── ABOUT ── */}
+      <section id="m-about" style={{ position: 'relative', borderTop: '1px solid rgba(180,140,220,0.06)' }}>
+        <div className="m-orb" style={{ width: '500px', height: '500px', background: '#502090', top: '0px', right: '-150px' }} />
+        <FloatingBubbles />
+        <div className="m-section"><div className="m-section-inner">
+          <p className="m-eyebrow">01</p>
+          <h2 className="m-heading">About <em>Me</em></h2>
+          <div className="m-rule" />
+          <div className="m-about-grid">
+            <div className="m-about-body">
+              <p>I&apos;m a <strong>Computer Science Engineering undergraduate</strong> at Reva University, Bangalore, with a strong foundation in full-stack development and a genuine passion for building AI-powered applications that solve real problems.</p>
+              <p>My work spans the full stack &mdash; from crafting <strong>responsive React interfaces</strong> to architecting robust Node.js backends with PostgreSQL and MongoDB. I&apos;ve shipped production-grade AI SaaS platforms, authentication systems, and real-time applications &mdash; always focused on <strong>clean architecture and scalable design</strong>.</p>
+              <p>Outside code, I&apos;m a competitive chess player &mdash; having secured <strong>1st prize twice</strong> at inter-school championships &mdash; and an active hackathon participant who thrives in rapid prototyping environments.</p>
+              <div className="m-stat-row">{[['8.42','Current CGPA'],['5+','Projects Shipped'],['10+','Technologies'],['4×','Hackathon Awards']].map(([n,l]) => <div className="m-stat" key={l}><div className="m-stat-num">{n}</div><div className="m-stat-label">{l}</div></div>)}</div>
+            </div>
+            <div className="m-info-panel">
+              {[
+                ['Location', 'Bangalore, India'],
+                ['Email', <a href="mailto:pratyushbhattacharya7@gmail.com">pratyushbhattacharya7@gmail.com</a>],
+                ['Phone', <a href="tel:+918123264791">+91 81232 64791</a>],
+                ['GitHub', <a href="https://github.com/nayan777pratyush" target="_blank" rel="noopener noreferrer">nayan777pratyush</a>],
+                ['LinkedIn', <a href="https://www.linkedin.com/in/pratyush-bhattacharya/" target="_blank" rel="noopener noreferrer">Pratyush-Bhattacharya</a>],
+                ['Status', <span className="m-status-badge">Open to internships &amp; collaborations</span>],
+              ].map(([label, value]) => <div className="m-info-row" key={String(label)}><span className="m-info-label">{label}</span><span className="m-info-value">{value}</span></div>)}
             </div>
           </div>
-        </section>
+        </div></div>
+      </section>
 
-        {/* ── PROJECTS (Click to view in-depth card version) ── */}
-        <section id="m-projects" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
-          <div className="m-orb" style={{ width: '600px', height: '600px', background: '#4020a0', top: '-100px', right: '-200px' }} />
-          <FloatingBubbles />
-          <div className="m-section">
-            <div className="m-section-inner">
-              <p className="m-eyebrow">03</p>
-              <h2 className="m-heading">Featured <em>Projects</em></h2>
-              <div className="m-rule" />
-              <div className="m-projects-grid">
-                {PROJECTS.map((p) => (
-                  <div
-                    className="m-project-card"
-                    key={p.tag}
-                    onClick={() => handleCardClick(p)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(p); }}
-                    style={{
-                      transform: clickedCard === p.tag ? 'scale(0.96) translateY(4px)' : undefined,
-                      transition: clickedCard === p.tag ? 'transform 0.18s ease' : undefined,
-                      boxShadow: clickedCard === p.tag ? '0 0 40px rgba(180,140,232,0.45), 0 0 0 2px rgba(180,140,232,0.4)' : undefined,
-                    }}
-                  >
-                    <div className="m-project-tag">{p.tag}</div>
-                    <h3 className="m-project-name">{p.name}<em>{p.nameEm}</em></h3>
-                    <ul className="m-project-bullets">
-                      {p.bullets.map((b, bi) => <li key={bi}>{b}</li>)}
-                    </ul>
-                    <div className="m-tech-tags">
-                      {p.tags.map(t => <span className="m-tech-tag" key={t}>{t}</span>)}
-                    </div>
-                    <div className="m-project-links" onClick={(e) => e.stopPropagation()}>
-                      <a href={p.github} target="_blank" rel="noopener noreferrer" className="m-project-link">
-                        <GitHubIcon /> GitHub
-                      </a>
-                      {p.live && (
-                        <a href={p.live} target="_blank" rel="noopener noreferrer" className="m-project-link">
-                          <ExternalIcon /> Live Demo
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* ── EDUCATION ── */}
+      <section id="m-education" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
+        <div className="m-orb" style={{ width: '400px', height: '400px', background: '#301870', bottom: '0', left: '-100px' }} /><FloatingBubbles />
+        <div className="m-section"><div className="m-section-inner">
+          <p className="m-eyebrow">02</p><h2 className="m-heading"><em>Education</em></h2><div className="m-rule" />
+          <div className="m-timeline">{[
+            { date: 'Sep 2023 — Present', degree: 'BTech in Computer Science Engineering', school: 'Reva University, Bangalore', grade: 'CGPA 8.42 / 10' },
+            { date: 'May 2021 — Apr 2023', degree: 'Pre-University Education', school: 'Cathedral Composite PU College, Bangalore', grade: '93.0%' },
+            { date: 'June 2010 — March 2021', degree: 'Schooling (CBSE)', school: 'Kairalee Nilayam Central School, Bangalore', grade: '87.8%' },
+          ].map(item => <div className="m-tl-item" key={item.date}><div className="m-tl-dot" /><div className="m-tl-date">{item.date}</div><div className="m-tl-degree">{item.degree}</div><div className="m-tl-school">{item.school}</div><span className="m-tl-badge">{item.grade}</span></div>)}</div>
+        </div></div>
+      </section>
+
+      {/* ── PROJECTS ── */}
+      <section id="m-projects" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
+        <div className="m-orb" style={{ width: '600px', height: '600px', background: '#4020a0', top: '-100px', right: '-200px' }} /><FloatingBubbles />
+        <div className="m-section"><div className="m-section-inner">
+          <p className="m-eyebrow">03</p><h2 className="m-heading">Featured <em>Projects</em></h2><div className="m-rule" />
+          <div className="m-projects-grid">{PROJECTS.map(p => <div className="m-project-card" key={p.tag} onClick={() => handleCardClick(p)} role="button" tabIndex={0} onKeyDown={e => { if (e.key === 'Enter') handleCardClick(p); }} style={{ transform: clickedCard === p.tag ? 'scale(0.96) translateY(4px)' : undefined, transition: clickedCard === p.tag ? 'transform 0.18s ease' : undefined, boxShadow: clickedCard === p.tag ? '0 0 40px rgba(180,140,232,0.45), 0 0 0 2px rgba(180,140,232,0.4)' : undefined }}>
+            <div className="m-project-tag">{p.tag}</div><h3 className="m-project-name">{p.name}<em>{p.nameEm}</em></h3>
+            <ul className="m-project-bullets">{p.bullets.map((b, bi) => <li key={bi}>{b}</li>)}</ul>
+            <div className="m-tech-tags">{p.tags.map(t => <span className="m-tech-tag" key={t}>{t}</span>)}</div>
+            <div className="m-project-links" onClick={e => e.stopPropagation()}><a href={p.github} target="_blank" rel="noopener noreferrer" className="m-project-link"><GitHubIcon /> GitHub</a>{p.live && <a href={p.live} target="_blank" rel="noopener noreferrer" className="m-project-link"><ExternalIcon /> Live Demo</a>}</div>
+          </div>)}</div>
+        </div></div>
+      </section>
+
+      {/* ── SKILLS ── */}
+      <section id="m-skills" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
+        <div className="m-orb" style={{ width: '500px', height: '500px', background: '#602090', bottom: '-100px', left: '-150px' }} /><FloatingBubbles />
+        <div className="m-section"><div className="m-section-inner">
+          <p className="m-eyebrow">04</p><h2 className="m-heading">Technical <em>Skills</em></h2><div className="m-rule" />
+          <div className="m-skills-outer">{[
+            { title: 'Programming Languages', skills: ['C','C++','Java','Python','JavaScript','TypeScript','SQL'] },
+            { title: 'Web & Backend Technologies', skills: ['React.js','Node.js','Express.js','Next.js','MongoDB','MySQL','PostgreSQL','EJS'] },
+            { title: 'Tools & Platforms', skills: ['Git','GitHub','Postman','Jupyter Notebook','Ubuntu','Kali Linux','Salesforce','Docker','Cloud'] },
+            { title: 'Core Concepts', skills: ['MERN Stack','RESTful API Design','Authentication & Authorization','CRUD Operations','DSA','OOP','Machine Learning','DBMS','OS','Computer Networks'] },
+            { title: 'Soft Skills', skills: ['Problem Solving','Leadership','Team Collaboration','Time Management','Analytical Thinking'] },
+          ].map(group => <div key={group.title}><div className="m-skill-group-title">{group.title}</div><div className="m-pills">{group.skills.map(s => <span className="m-pill" key={s}>{s}</span>)}</div></div>)}</div>
+        </div></div>
+      </section>
+
+      {/* ── ACHIEVEMENTS ── */}
+      <section id="m-achievements" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
+        <div className="m-orb" style={{ width: '450px', height: '450px', background: '#3010a0', top: '100px', right: '-120px' }} /><FloatingBubbles />
+        <div className="m-section"><div className="m-section-inner">
+          <p className="m-eyebrow">05</p><h2 className="m-heading"><em>Achievements</em></h2><div className="m-rule" />
+          <div className="m-achieve-grid">{[
+            { icon: '♟', prize: '🥇 1st Prize × 2  |  🥈 2nd Prize × 1', title: 'Inter-School Chess', detail: 'REVA University, School of CSE — 2023, 2024 (1st) · 2025 (2nd)' },
+            { icon: '💻', prize: '🥈 2nd Prize', title: 'NITTE Vibe Hackathon', detail: 'Team: Rapid Coders — 2025' },
+            { icon: '🏆', prize: '🥈 2nd Prize', title: 'Code Quest 2.0', detail: 'Coding + Hackathon — REVA University, 2025 · Rapid Coders' },
+            { icon: '⚡', prize: '🥈 2nd Prize', title: 'Code Sprint — ALGO-RHYTHM 3.0', detail: 'Gopalan College of Engineering — April 2026' },
+          ].map(a => <div className="m-achieve-card" key={a.title}><span className="m-achieve-icon">{a.icon}</span><div className="m-achieve-prize">{a.prize}</div><div className="m-achieve-title">{a.title}</div><div className="m-achieve-detail">{a.detail}</div></div>)}</div>
+          <div className="m-certs"><div className="m-skill-group-title">Certifications</div><div className="m-cert-grid">{['Art of C Programming — NPTEL','Introduction to Python — Infotech Solutions','Cybersecurity and Blockchain — TrendingSkills','AWS Solutions Architecture — Forage','EA Software Engineering — Forage','IBM Digital Badges','AWS Digital Badges'].map(c => <div className="m-cert-item" key={c}>{c}</div>)}</div></div>
+        </div></div>
+      </section>
+
+      {/* ── CONTACT ── */}
+      <section id="m-contact" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
+        <div className="m-orb" style={{ width: '700px', height: '700px', background: '#5020c0', top: '-200px', left: '50%', transform: 'translateX(-50%)' }} /><FloatingBubbles />
+        <div className="m-section"><div className="m-section-inner"><p className="m-eyebrow" style={{ justifyContent: 'center' }}>06</p><div className="m-contact-inner">
+          <h2 className="m-contact-tagline">Get In <em>Touch</em></h2>
+          <p className="m-contact-sub">Open to internship opportunities, freelance projects, and exciting collaborations. Whether you have a project in mind or just want to say hello &mdash; my inbox is always open.</p>
+          <div className="m-contact-links">
+            <a href="mailto:pratyushbhattacharya7@gmail.com" className="m-contact-link">✉ pratyushbhattacharya7@gmail.com</a>
+            <a href="https://www.linkedin.com/in/pratyush-bhattacharya/" target="_blank" rel="noopener noreferrer" className="m-contact-link"><LinkedInIcon /> LinkedIn</a>
+            <a href="https://github.com/nayan777pratyush" target="_blank" rel="noopener noreferrer" className="m-contact-link"><GitHubIcon /> GitHub</a>
+            <a href="tel:+918123264791" className="m-contact-link">☎ +91 81232 64791</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="m-contact-link"><ResumeIcon /> View Resume</a>
+            <a href="/resume.pdf" download="Pratyush-Bhattacharya-Resume.pdf" className="m-contact-link">↓ Download Resume</a>
           </div>
-        </section>
+        </div></div></div>
+      </section>
 
-        {/* ── SKILLS ── */}
-        <section id="m-skills" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
-          <div className="m-orb" style={{ width: '500px', height: '500px', background: '#602090', bottom: '-100px', left: '-150px' }} />
-          {/* Floating Bubbles */}
-          <FloatingBubbles />
-          <div className="m-section">
-            <div className="m-section-inner">
-              <p className="m-eyebrow">04</p>
-              <h2 className="m-heading">Technical <em>Skills</em></h2>
-              <div className="m-rule" />
-              <div className="m-skills-outer">
-                {[
-                  { title: 'Programming Languages', skills: ['C','C++','Java','Python','JavaScript','TypeScript','SQL'] },
-                  { title: 'Web & Backend Technologies', skills: ['React.js','Node.js','Express.js','Next.js','MongoDB','MySQL','PostgreSQL','EJS'] },
-                  { title: 'Tools & Platforms', skills: ['Git','GitHub','Postman','Jupyter Notebook','Ubuntu','Kali Linux','Salesforce'] },
-                  { title: 'Core Concepts', skills: ['MERN Stack','RESTful API Design','Authentication & Authorization','CRUD Operations','DSA','OOP','Machine Learning','DBMS','OS','Computer Networks'] },
-                  { title: 'Soft Skills', skills: ['Problem Solving','Leadership','Team Collaboration','Time Management','Analytical Thinking'] },
-                ].map((group) => (
-                  <div key={group.title}>
-                    <div className="m-skill-group-title">{group.title}</div>
-                    <div className="m-pills">{group.skills.map(s => <span className="m-pill" key={s}>{s}</span>)}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── ACHIEVEMENTS ── */}
-        <section id="m-achievements" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
-          <div className="m-orb" style={{ width: '450px', height: '450px', background: '#3010a0', top: '100px', right: '-120px' }} />
-          <FloatingBubbles />
-          <div className="m-section">
-            <div className="m-section-inner">
-              <p className="m-eyebrow">05</p>
-              <h2 className="m-heading"><em>Achievements</em></h2>
-              <div className="m-rule" />
-              <div className="m-achieve-grid">
-                {[
-                  { icon: '\u265F', prize: '\uD83E\uDD47 1st Prize \u00D7 2  |  \uD83E\uDD48 2nd Prize \u00D7 1', title: 'Inter-School Chess', detail: 'REVA University, School of CSE \u2014 2023, 2024 (1st) \u00B7 2025 (2nd)' },
-                  { icon: '\uD83D\uDCBB', prize: '\uD83E\uDD48 2nd Prize', title: 'NITTE Vibe Hackathon', detail: 'Team: Rapid Coders \u2014 2025' },
-                  { icon: '\uD83C\uDFC6', prize: '\uD83E\uDD48 2nd Prize', title: 'Code Quest 2.0', detail: 'Coding + Hackathon \u2014 REVA University, 2025 \u00B7 Rapid Coders' },
-                  { icon: '\u26A1', prize: '\uD83E\uDD48 2nd Prize', title: 'Code Sprint \u2014 ALGO-RHYTHM 3.0', detail: 'Gopalan College of Engineering \u2014 April 2026' },
-                ].map(a => (
-                  <div className="m-achieve-card" key={a.title}>
-                    <span className="m-achieve-icon">{a.icon}</span>
-                    <div className="m-achieve-prize">{a.prize}</div>
-                    <div className="m-achieve-title">{a.title}</div>
-                    <div className="m-achieve-detail">{a.detail}</div>
-                  </div>
-                ))}
-              </div>
-
-              
-              <div className="m-certs">
-                <div className="m-skill-group-title">Certifications</div>
-                <div className="m-cert-grid">
-                  {[
-                    'Art of C Programming \u2014 NPTEL',
-                    'Introduction to Python \u2014 Infotech Solutions',
-                    'Cybersecurity and Blockchain \u2014 TrendingSkills',
-                    'AWS Solutions Architecture \u2014 Forage',
-                    'EA Software Engineering \u2014 Forage',
-                    'IBM Digital Badges',
-                    'AWS Digital Badges',
-                  ].map(c => <div className="m-cert-item" key={c}>{c}</div>)}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── CONTACT ── */}
-        <section id="m-contact" style={{ borderTop: '1px solid rgba(180,140,220,0.06)', position: 'relative' }}>
-          <div className="m-orb" style={{ width: '700px', height: '700px', background: '#5020c0', top: '-200px', left: '50%', transform: 'translateX(-50%)' }} />
-          {/* Floating Bubbles */}
-          <FloatingBubbles />
-          <div className="m-section">
-            <div className="m-section-inner">
-              <p className="m-eyebrow" style={{ justifyContent: 'center' }}>06</p>
-              <div className="m-contact-inner">
-                <h2 className="m-contact-tagline">Get In <em>Touch</em></h2>
-                <p className="m-contact-sub">
-                  Open to internship opportunities, freelance projects, and exciting collaborations. Whether you have a project in mind or just want to say hello &mdash; my inbox is always open.
-                </p>
-                <div className="m-contact-links">
-                  <a href="mailto:pratyushbhattacharya7@gmail.com" className="m-contact-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
-                    pratyushbhattacharya7@gmail.com
-                  </a>
-                  <a href="https://www.linkedin.com/in/pratyush-bhattacharya/" target="_blank" rel="noopener noreferrer" className="m-contact-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn
-                  </a>
-                  <a href="https://github.com/nayan777pratyush" target="_blank" rel="noopener noreferrer" className="m-contact-link">
-                    <GitHubIcon /> GitHub &mdash; nayan777pratyush
-                  </a>
-                  <a href="tel:+918123264791" className="m-contact-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.04 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                    +91 81232 64791
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── FOOTER ── */}
-        <footer className="m-footer">
-          <div className="m-footer-name">Pratyush Bhattacharya</div>
-          <div className="m-footer-copy">&copy; 2026 &middot; Designed &amp; Crafted with precision</div>
-        </footer>
-
-      </div>
+      <footer className="m-footer"><div className="m-footer-name">Pratyush Bhattacharya</div><div className="m-footer-copy">&copy; 2026 &middot; Designed &amp; Crafted with precision</div></footer>
     </div>
   );
 }
