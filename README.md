@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=220&amp;section=header&amp;text=Step%20Into%20Wonder&amp;fontSize=46&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=230&amp;section=header&amp;text=Step%20Into%20Wonder&amp;fontSize=48&amp;fontColor=ffffff&amp;animation=twinkling&amp;fontAlignY=35" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com/api?font=Fira+Code&amp;size=20&amp;duration=2500&amp;pause=1000&amp;color=A78BFA&amp;center=true&amp;vCenter=true&amp;width=600&amp;lines=Full+Stack+%26+AI+Developer;Scroll-driven+3D+Portfolio;Built+with+Curiosity" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&amp;size=20&amp;duration=2500&amp;pause=1000&amp;color=A78BFA&amp;center=true&amp;vCenter=true&amp;width=600&amp;lines=Full+Stack+%26+AI+Developer;Scroll-driven+3D+Portfolio;Built+with+Curiosity" alt="Typing SVG" />
 
 <br/>
 
@@ -25,12 +25,6 @@ The landing experience opens with a scroll-driven parallax intro and a floating 
 - Resume and contact information
 
 > *Build useful things, learn continuously, and make technology feel a little more alive.*
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=transparent&amp;color=gradient&amp;customColorList=6,11,20&amp;height=60&amp;section=header" width="60%"/>
-
-</div>
 
 ## 📂 Project Structure
 
@@ -90,7 +84,7 @@ The application will be available at the local Vite development URL shown in the
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=150&amp;section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=150&amp;section=header&amp;reversal=true" width="100%"/>
 
 ## 👨‍💻 Author
 
@@ -103,7 +97,8 @@ Interested in building scalable software, exploring AI, and creating experiences
 
 ## 🔗 Links
 
-🌐 [Portfolio](https://my-portfolio-pratyush.vercel.app/) &nbsp;•&nbsp; 🐙 [GitHub](https://github.com/nayan777pratyush/MyPortfolio)
+- 🌐 [Portfolio](https://my-portfolio-pratyush.vercel.app/) 
+- 🐙 [GitHub](https://github.com/nayan777pratyush/MyPortfolio)
 
 <br/>
 
