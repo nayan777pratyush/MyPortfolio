@@ -1,377 +1,411 @@
-<div align="center">
+# 🌌 MyPortfolio — Pratyush Bhattacharya
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a0d2e,50:4a1a6e,100:b48ce8&height=200&section=header&text=Step%20Into%20Wonder&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Pratyush%20Bhattacharya%20—%20Portfolio&descSize=18&descAlignY=60&descColor=c9a8f0&animation=fadeIn" width="100%" />
+> *A modern interactive developer portfolio blending animated visuals, thoughtful engineering, AI, full-stack development, and a touch of wonder.*
 
-<br/>
+[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Step%20Into%20Wonder-purple?style=for-the-badge)](https://my-portfolio-pratyush.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-MyPortfolio-black?style=for-the-badge&logo=github)](https://github.com/nayan777pratyush/MyPortfolio)
 
+---
 
+## ✨ About The Portfolio
 
+This is my personal developer portfolio — a place where **software engineering, AI, interactive experiences, and creative design** come together.
 
+The portfolio showcases my:
 
+- Full-stack development work
+- AI and data projects
+- Technical skills
+- Education and achievements
+- Developer journey
+- Resume and contact information
 
-<br/>
+The goal is simple:
 
-An immersive, scroll-driven portfolio experience — built with cinematic parallax, a living 3D robot companion, and a design language borrowed from wonder itself.
+> **Build useful things, learn continuously, and make technology feel a little more alive.**
 
-<br/>
+---
 
+## 🎬 Hero Experience
 
+The landing page features a custom **three-slide animated hero carousel**.
 
-</div>
+Each slide automatically changes every **10 seconds**, while visitors can also navigate manually using the previous/next controls.
 
-✨ What Makes This Different
+### 01 · The Work
 
-This portfolio is designed as a modern, interactive developer portfolio that combines a polished visual identity with practical project and career information.
+The first slide introduces the creative side of the portfolio.
 
-Feature
+- Animated 3D developer GIF
+- Developer-focused quotes
+- Full-screen visual presentation
+- Interactive slide navigation
 
-Details
+> *"Projects that live at the edge of AI, full-stack engineering, and creative systems."*
 
-🎞️ Animated Hero Carousel
+> *"Code with curiosity. Build with purpose. Learn without limits."*
 
-Three rotating hero slides that automatically transition every 10 seconds, with manual previous/next controls
+> *"I believe consistency beats motivation."*
 
-🧊 3D Developer Visual
+> *"Let's build something amazing together."*
 
-Animated developer 3D GIF featured in the first hero slide
+---
 
-💻 Developer Terminal
+### 02 · The Identity
 
-Animated terminal GIF paired with the personal introduction in the second hero slide
+The second slide focuses on the developer behind the projects.
 
-🚀 Build-Focused Slide
+**Pratyush Bhattacharya**
 
-A third slide highlighting Full Stack, AI & Data, and Deploy & Scale capabilities
+**Full Stack & AI Developer**
 
-💡 Developer Quotes
+It includes:
 
-Personal engineering philosophy integrated into the hero experience
+- Personal introduction
+- GitHub
+- LinkedIn
+- View Projects
+- Get In Touch
+- Animated developer terminal GIF
 
-🤖 3D Robot Companion
+---
 
-Interactive Three.js robot experience for project interactions
+### 03 · The Build
 
-🃏 Project Experience
+The third slide focuses on the engineering mindset behind the portfolio.
 
-Interactive project cards with detailed project views and links
+### Build Beyond the Idea
 
-📱 Responsive Design
+**Full Stack**
 
-Adaptive layouts for desktop, tablet, and mobile screens
+React, Next.js, Node.js, REST APIs and modular application architecture.
 
-📄 Resume Access
+**AI & Data**
 
-Resume can be opened or downloaded directly from Get In Touch
+AI integrations, intelligent applications, PostgreSQL, MongoDB and data-driven systems.
 
-🐳 Modern Tooling
+**Deploy & Scale**
 
-Docker and Cloud included in the Tools & Platforms skill set
+Docker, cloud platforms and production-minded engineering.
 
-🎬 Hero Experience
+The idea is to showcase not just what I code, but how I approach building software.
 
-The landing experience is focused and interactive without the previous full-screen parallax intro.
+---
 
-01 · THE WORK
-┌────────────────────┬──────────────────────────┐
-│                    │  Developer quotes        │
-│    3D DEVELOPER    │  and engineering         │
-│        GIF         │  philosophy              │
-│                    │                          │
-└────────────────────┴──────────────────────────┘
+## 📱 Responsive Design
 
-                    ↓ 10 seconds
+The portfolio is designed to work across:
 
-02 · THE IDENTITY
-┌──────────────────────────┬────────────────────┐
-│  PRATYUSH BHATTACHARYA   │                    │
-│  Full Stack & AI         │  DEVELOPER         │
-│  Developer               │  TERMINAL GIF      │
-│                          │                    │
-│  [View Projects]         │                    │
-│  [Get In Touch]          │                    │
-└──────────────────────────┴────────────────────┘
+- 💻 Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📟 Tablet
 
-                    ↓ 10 seconds
+### Mobile Experience
 
-03 · THE BUILD
-┌────────────────────────────────────────────────┐
-│  BUILD BEYOND THE IDEA.                       │
-│                                                │
-│  Full Stack · AI & Data · Deploy & Scale      │
-│                                                │
-│  Turning ideas into thoughtful, scalable      │
-│  software systems.                             │
-└────────────────────────────────────────────────┘
+The responsive version includes:
 
-The hero automatically cycles through all three slides every 10 seconds, while arrow controls let visitors move between slides manually.
+- Mobile navigation
+- Stacked hero layouts
+- Swipeable hero slides
+- Responsive project cards
+- Responsive skills
+- Mobile-friendly contact section
+- No horizontal overflow
+- Adaptive typography and spacing
+- Desktop-only cursor effects disabled where appropriate
 
-📱 Responsive Experience
+The three hero slides remain fully functional on mobile.
 
-The portfolio adapts to desktop, tablet, and mobile screens.
+---
 
-Responsive navigation for smaller screens
+## 🤖 Interactive 3D Robot
 
-Hero slides adapt their layouts for mobile
+The portfolio includes an interactive **Three.js 3D robot companion**.
 
-Mobile hero supports swipe navigation
+The robot adds an interactive element to the experience while keeping the actual portfolio content accessible and easy to navigate.
 
-Project cards stack cleanly on smaller screens
+### Technologies used for the experience
 
-Skills wrap without horizontal overflow
+- Three.js
+- React Three Fiber
+- Drei
+- GLB 3D model
+- Custom animations
+- Interactive UI states
 
-Contact actions fit smaller displays
+---
 
-Desktop-only cursor effects are disabled where appropriate
+## 🃏 Projects
 
-No horizontal page overflow on narrow screens
+The Projects section presents my selected development work through interactive cards.
 
-🛠️ Tech Stack
+Each project can include:
 
-<div align="center">
+- Project description
+- Technology stack
+- GitHub repository
+- Live deployment
+- Project details
+- Interactive project modal
 
-Core Framework
+The projects cover areas such as:
 
+- Full-stack web development
+- AI-powered applications
+- Developer tools
+- Data-driven applications
+- Interactive web experiences
 
+---
 
+## 🛠️ Tech Stack
 
+### Frontend
 
-3D & Animation
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
+### Backend
 
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![REST API](https://img.shields.io/badge/REST%20API-02569B?style=flat-square&logo=fastapi&logoColor=white)
 
+### Databases
 
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 
+### AI / Data
 
-Styling
+![AI](https://img.shields.io/badge/AI-7C3AED?style=flat-square&logo=openai&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
+### 3D / Animation
 
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)
+![React Three Fiber](https://img.shields.io/badge/React%20Three%20Fiber-000000?style=flat-square&logo=react&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black)
 
+### Tools & Platforms
 
-Deployment
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white)
+![Salesforce](https://img.shields.io/badge/Salesforce-00A1E0?style=flat-square&logo=salesforce&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Cloud](https://img.shields.io/badge/Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 
+---
 
+## 📂 Project Structure
 
-
-
-
-</div>
-
-portfolio/
+```text
+MyPortfolio/
+│
 ├── public/
 │   ├── models/
-│   │   └── robot.glb          ← 3D robot model (Three.js GLB)
-│   ├── developer-3d.gif       ← Animated 3D developer hero visual
-│   ├── developer-terminal.gif ← Animated terminal hero visual
-│   └── resume.pdf             ← Resume available from Get In Touch
+│   │   └── robot.glb
+│   │
+│   ├── developer-3d.gif
+│   ├── developer-terminal.gif
+│   └── resume.pdf
+│
 ├── src/
-│   ├── assets/                ← Project preview images
 │   ├── components/
-│   │   └── Robot/
-│   │       ├── Robot.tsx          ← 3D robot mesh & animation hook
-│   │       ├── RobotAnimations.ts ← State machine: flyIn/idle/wave/flyOut
-│   │       ├── RobotOverlay.tsx   ← Cinematic transition orchestrator
-│   │       └── RobotScene.tsx     ← Three.js Canvas + lighting setup
-│   ├── App.tsx                ← Main app, all sections, project data
-│   ├── App.css                ← Component-specific styles
-│   ├── index.css              ← Global reset + CSS variables
-│   └── main.tsx               ← React root entry
-├── index.html
+│   ├── assets/
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── package.json
+├── tsconfig.json
 ├── vite.config.ts
-├── tailwind.config.js
-└── package.json
+└── README.md
+```
 
-🤖 The Robot System
+---
 
-The robot companion is built on a phase-based state machine that orchestrates both the CSS travel across the screen and the internal 3D animation:
+## 🎞️ Portfolio Assets
 
-type RobotState = "flyIn" | "idle" | "wave" | "flyOut";
+| File                             | Purpose                                        |
+| --------------------------------- | ----------------------------------------------- |
+| `public/developer-3d.gif`         | Animated 3D developer visual used in the hero  |
+| `public/developer-terminal.gif`   | Animated developer terminal visual             |
+| `public/resume.pdf`               | Resume available from the Get In Touch section |
+| `public/models/robot.glb`         | Interactive 3D robot model                     |
 
-// Phase machine controls the cinematic sequence
-type Phase =
-  | "idle"       // nothing shown
-  | "backdrop"   // dark screen fades in
-  | "flying"     // robot travels L → R (horizontal, tiny → full size)
-  | "landing"    // robot tips upright at right side with bounce
-  | "resting"    // robot floats & waves, project card shown
-  | "launching"  // robot tips horizontal again, R → L exit
-  | "gone"       // screen clears
+---
 
-The robot's CSS journey across the screen:
+## ⚡ Getting Started
 
-Starts at left: -200px, scale(0.12), rotated -90deg (horizontal like a missile)
+### 1. Clone the repository
 
-Transitions to left: calc(100vw - 180px) with scale(1) (full size at right)
-
-On arrival: rotates 0deg (upright) with a spring bounce — like a rocket landing
-
-On close: reverses — tips horizontal, shrinks, disappears off the left edge
-
-🚀 Projects Featured
-
-Project
-
-Type
-
-Stack
-
-Links
-
-QuickAI
-
-AI SaaS Platform
-
-React · Node.js · PostgreSQL · AI APIs
-
-Live ↗ · GitHub ↗
-
-PratyushLMS
-
-Learning Management System
-
-React · Node.js · Express · MongoDB
-
-GitHub ↗
-
-MERN-Auth
-
-Authentication System
-
-React · Node.js · Express · MongoDB · JWT
-
-GitHub ↗
-
-Uber Clone
-
-Ride-Hailing App
-
-React · Node.js · Express · MongoDB · Google Maps
-
-GitHub ↗
-
-MeetFlow AI
-
-AI Meeting Platform
-
-Next.js · TypeScript · WebRTC · AI APIs
-
-GitHub ↗
-
-🎨 Design System
-
-The entire site runs on a single "Mystic Void" design language with CSS custom properties:
-
-:root {
-  /* Background palette — deep void to mystic surface */
-  --mystic-void:     #08050c;
-  --mystic-deep:     #110d1a;
-  --mystic-mid:      #1c1528;
-  --mystic-surface:  #231c32;
-  --mystic-elevated: #2e2540;
-
-  /* Accent — soft violet glow */
-  --mystic-accent:     #b48ce8;
-  --mystic-accent-dim: rgba(180,140,232,0.60);
-  --mystic-gold:       #e8c87a;
-
-  /* Typography */
-  --font-display:  'Viaoda Libre', serif;    /* Hero headlines */
-  --font-body:     'Imprima', sans-serif;    /* UI text */
-  --font-refined:  'Cormorant Garamond';     /* Descriptions */
-
-  /* Glassmorphism */
-  --glass-bg:     rgba(30, 20, 50, 0.55);
-  --glass-border: rgba(180, 140, 220, 0.22);
-  --glass-blur:   blur(20px);
-}
-
-⚡ Getting Started
-
-# Clone the repo
+```bash
 git clone https://github.com/nayan777pratyush/MyPortfolio.git
+```
+
+### 2. Navigate into the project
+
+```bash
 cd MyPortfolio
+```
 
-# Install dependencies
+### 3. Install dependencies
+
+```bash
 npm install
+```
 
-# Start development server
+### 4. Start the development server
+
+```bash
 npm run dev
+```
 
-# Build for production
+The application will be available at the local Vite development URL shown in the terminal.
+
+---
+
+## 🏗️ Build For Production
+
+```bash
 npm run build
+```
 
-# Preview production build
+To preview the production build locally:
+
+```bash
 npm run preview
+```
 
-Requires: Node.js 18+ · npm 9+
+---
 
-The robot model lives at public/models/robot.glb — the app will show a blank 3D scene if it's missing. Ensure it's present before running.
+## 🚀 Deployment
 
-📁 Key Files Reference
+The portfolio is deployed using **Vercel**.
 
-File
+### Live Portfolio
 
-Purpose
+**[Step Into Wonder](https://my-portfolio-pratyush.vercel.app/)**
 
-src/App.tsx
+The deployment automatically updates when changes are pushed to the connected GitHub repository.
 
-All sections, project data, layout, global CSS injection
+---
 
-src/components/Robot/RobotAnimations.ts
+## 📄 Resume
 
-3D state machine — controls position/rotation per frame
+The Resume is available directly through the **Get In Touch** section.
 
-src/components/Robot/RobotOverlay.tsx
+Visitors can:
 
-Phase orchestrator — CSS travel + backdrop + stars + speed lines
+- Open the resume in a new tab
+- Download the resume directly
 
-src/components/Robot/RobotScene.tsx
+---
 
-Three.js Canvas wrapper with lighting
+## 📬 Get In Touch
 
-src/components/Robot/Robot.tsx
+I'm always open to discussing:
 
-GLB model loader + frame loop
+- Software engineering
+- Full-stack development
+- AI projects
+- Collaboration
+- Internships
+- Interesting technical ideas
 
-public/models/robot.glb
+### Connect with me
 
-3D robot asset
+- 💼 LinkedIn
+- 🐙 GitHub
+- 📧 Email
+- 📱 Mobile
+- 📄 Resume
 
-public/developer-3d.gif
+---
 
-Animated 3D developer hero visual
+## 🌟 Design Philosophy
 
-public/developer-terminal.gif
+The portfolio follows a simple principle:
 
-Animated terminal hero visual
+> **Technology should feel useful, but it can also feel alive.**
 
-public/resume.pdf
+The design combines:
 
-Resume opened/downloaded from Get In Touch
+- Dark futuristic visuals
+- Neon-inspired accents
+- Glassmorphism
+- Smooth transitions
+- Animated elements
+- Interactive 3D
+- Clean typography
+- Responsive layouts
 
-🌐 Live Demo
+The visual experience is intentionally balanced with practical portfolio information.
+
+---
+
+## 🧠 Development Philosophy
+
+> **Code with curiosity. Build with purpose. Learn without limits.**
+
+I focus on:
+
+- Writing maintainable code
+- Understanding systems instead of only frameworks
+- Building real projects
+- Learning from experimentation
+- Improving through consistency
+- Exploring AI and emerging technologies
+
+---
+
+## 📈 Future Improvements
+
+Some possible future additions include:
+
+- More interactive 3D experiences
+- Improved project filtering
+- More AI-powered portfolio features
+- Additional cloud/deployment demonstrations
+- Performance optimizations
+- More accessibility improvements
+- Additional developer experiments
+
+---
+
+## 👨‍💻 Author
+
+### Pratyush Bhattacharya
+
+**Full Stack & AI Developer**
+
+Interested in building scalable software, exploring AI, and creating experiences that combine engineering with creativity.
+
+---
+
+## 🔗 Links
+
+🌐 **Portfolio:** [my-portfolio-pratyush.vercel.app](https://my-portfolio-pratyush.vercel.app/)
+
+🐙 **GitHub:** [github.com/nayan777pratyush/MyPortfolio](https://github.com/nayan777pratyush/MyPortfolio)
+
+---
 
 <div align="center">
 
-→ my-portfolio-pratyush.vercel.app ←
+### ✨ Thanks for visiting
 
-Designed to work smoothly across desktop, tablet, and mobile.
-
-</div>
-
-📬 Contact
-
-<div align="center">
-
-
-
-Feel free to fork, star ⭐, or raise an issue if you find something interesting!
-
-</div>
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:b48ce8,50:4a1a6e,100:1a0d2e&height=120&section=footer&animation=fadeIn" width="100%" />
-
-Built with curiosity, caffeine, and an unreasonable amount of code.
+**Build something. Learn something. Keep going.**
 
 </div>
