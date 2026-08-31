@@ -1,4 +1,6 @@
 <div align="center">
+  
+![Portfolio Preview](./public/preview.png)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=230&amp;section=header&amp;text=Step%20Into%20Wonder&amp;fontSize=48&amp;fontColor=ffffff&amp;animation=twinkling&amp;fontAlignY=35" width="100%"/>
 
@@ -97,8 +99,12 @@ Interested in building scalable software, exploring AI, and creating experiences
 
 ## 🔗 Links
 
-- 🌐 [Portfolio](https://my-portfolio-pratyush.vercel.app/) 
-- 🐙 [GitHub](https://github.com/nayan777pratyush/MyPortfolio)
+<div align="center">
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Site-8b5cf6?style=for-the-badge&logo=vercel&logoColor=white)](https://my-portfolio-pratyush.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nayan777pratyush/MyPortfolio)
+
+</div>
 
 <br/>
 
