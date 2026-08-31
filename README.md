@@ -1,13 +1,17 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Step%20Into%20Wonder&fontSize=42&fontColor=ffffff&animation=fadeIn&desc=Pratyush%20Bhattacharya%20—%20Full%20Stack%20%26%20AI%20Developer&descAlignY=65&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=220&amp;section=header&amp;text=Step%20Into%20Wonder&amp;fontSize=46&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38" width="100%"/>
+
+<img src="https://readme-typing-svg.demolab.com/api?font=Fira+Code&amp;size=20&amp;duration=2500&amp;pause=1000&amp;color=A78BFA&amp;center=true&amp;vCenter=true&amp;width=600&amp;lines=Full+Stack+%26+AI+Developer;Scroll-driven+3D+Portfolio;Built+with+Curiosity" alt="Typing SVG" />
+
+<br/>
 
 [![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Step%20Into%20Wonder-8b5cf6?style=for-the-badge)](https://my-portfolio-pratyush.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-MyPortfolio-181717?style=for-the-badge&logo=github)](https://github.com/nayan777pratyush/MyPortfolio)
 
 </div>
 
----
+<br/>
 
 ## ✨ About
 
@@ -22,7 +26,11 @@ The landing experience opens with a scroll-driven parallax intro and a floating 
 
 > *Build useful things, learn continuously, and make technology feel a little more alive.*
 
----
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=transparent&amp;color=gradient&amp;customColorList=6,11,20&amp;height=60&amp;section=header" width="60%"/>
+
+</div>
 
 ## 📂 Project Structure
 
@@ -49,8 +57,6 @@ MyPortfolio/
 ├── vite.config.ts
 └── README.md
 ```
-
----
 
 ## ⚡ Getting Started
 
@@ -80,9 +86,11 @@ npm run dev
 
 The application will be available at the local Vite development URL shown in the terminal.
 
----
+<br/>
 
 <div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=150&amp;section=header" width="100%"/>
 
 ## 👨‍💻 Author
 
@@ -102,6 +110,6 @@ Interested in building scalable software, exploring AI, and creating experiences
 ### ✨ Thanks for visiting
 **Build something. Learn something. Keep going.**
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=130&amp;section=footer" width="100%"/>
 
 </div>
